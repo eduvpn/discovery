@@ -1,8 +1,7 @@
 # Introduction
 
-The eduVPN (mobile) applications use a (central) discovery file that is 
-partly described in [INSTANCE_DISCOVERY](../INSTANCE_DISCOVERY.md), but how it 
-was signed was not described before.
+The eduVPN (mobile) applications use a (central) discovery file. This 
+repository contains a copy of them and instructions on how to sign them.
 
 These are the files located at 
 [https://static.eduvpn.nl/disco](https://static.eduvpn.nl/disco).

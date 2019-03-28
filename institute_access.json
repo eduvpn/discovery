@@ -53,6 +53,11 @@
             "logo": "https://static.eduvpn.nl/disco/img/uninett.png"
         },
         {
+            "base_uri": "https://eduvpn.unit.no/",
+            "display_name": "Unit",
+            "logo": "https://static.eduvpn.nl/disco/img/unit.png"
+        },
+        {
             "base_uri": "https://ut.eduvpn.nl/",
             "display_name": {
                 "en-US": "University of Twente",
@@ -66,6 +71,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/demo.png"
         }
     ],
-    "seq": 82,
-    "signed_at": "2019-02-07 18:15:26"
+    "seq": 83,
+    "signed_at": "2019-03-28 09:12:47"
 }

@@ -2,6 +2,17 @@
     "authorization_type": "distributed",
     "instances": [
         {
+            "base_uri": "https://labrat.eduvpn.nl/",
+            "display_name": {
+                "en-US": "Red (labrat.eduvpn.nl)",
+                "nl-NL": "Rood (labrat.eduvpn.nl)"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/red.png",
+            "public_key_list": [
+                "mcR9mjKkRP5xKda08zUF64th9gBrNCRblJqHlmk11dE"
+            ]
+        },
+        {
             "base_uri": "https://fedora-vpn.tuxed.net/",
             "display_name": {
                 "en-US": "Green (fedora-vpn.tuxed.net)",
@@ -13,6 +24,6 @@
             ]
         }
     ],
-    "seq": 86,
-    "signed_at": "2019-04-02 09:36:26"
+    "seq": 87,
+    "signed_at": "2019-04-02 14:42:41"
 }

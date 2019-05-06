@@ -12,6 +12,11 @@
             "logo": "https://static.eduvpn.nl/disco/img/nlesc.png"
         },
         {
+            "base_uri": "https://eur.eduvpn.nl/",
+            "display_name": "Erasmus University Rotterdam",
+            "logo": "https://static.eduvpn.nl/disco/img/eur.png"
+        },
+        {
             "base_uri": "https://geant.eduvpn.nl/",
             "display_name": "G\u00c9ANT",
             "logo": "https://static.eduvpn.nl/disco/img/geant.png"
@@ -71,6 +76,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/demo.png"
         }
     ],
-    "seq": 91,
-    "signed_at": "2019-04-24 13:03:30"
+    "seq": 92,
+    "signed_at": "2019-05-06 15:37:50"
 }

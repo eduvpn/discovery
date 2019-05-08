@@ -11,19 +11,8 @@
             "public_key_list": [
                 "mcR9mjKkRP5xKda08zUF64th9gBrNCRblJqHlmk11dE"
             ]
-        },
-        {
-            "base_uri": "https://fedora-vpn.tuxed.net/",
-            "display_name": {
-                "en-US": "Green (fedora-vpn.tuxed.net)",
-                "nl-NL": "Groen (fedora-vpn.tuxed.net)"
-            },
-            "logo": "https://static.eduvpn.nl/disco/img/green.png",
-            "public_key_list": [
-                "o4KD2G_-t1fHVyB8VNpD3DbGEOsWvX6EmuPddJCWCPA"
-            ]
         }
     ],
-    "seq": 94,
-    "signed_at": "2019-05-06 15:37:50"
+    "seq": 95,
+    "signed_at": "2019-05-08 09:07:35"
 }

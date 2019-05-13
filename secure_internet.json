@@ -10,7 +10,10 @@
                 "nl-NL": "Australi\u00eb"
             },
             "logo": "https://static.eduvpn.nl/disco/img/au.png",
-            "public_key": "vyB0kwxsYK1xU14SepLj7WSzcUO5Y2g8ARtBKVRLLDU="
+            "public_key": "vyB0kwxsYK1xU14SepLj7WSzcUO5Y2g8ARtBKVRLLDU=",
+            "public_key_list": [
+                "vyB0kwxsYK1xU14SepLj7WSzcUO5Y2g8ARtBKVRLLDU"
+            ]
         },
         {
             "base_uri": "https://eduvpn.deic.dk/",
@@ -21,7 +24,10 @@
                 "nl-NL": "Denemarken"
             },
             "logo": "https://static.eduvpn.nl/disco/img/dk.png",
-            "public_key": "pB2opEKG0YArbZlb8rK0dysgV8hk8QygYlB6xlNFqqs="
+            "public_key": "pB2opEKG0YArbZlb8rK0dysgV8hk8QygYlB6xlNFqqs=",
+            "public_key_list": [
+                "pB2opEKG0YArbZlb8rK0dysgV8hk8QygYlB6xlNFqqs"
+            ]
         },
         {
             "base_uri": "https://eduvpn1.eduvpn.de/",
@@ -32,7 +38,10 @@
                 "nl-NL": "Duitsland"
             },
             "logo": "https://static.eduvpn.nl/disco/img/de.png",
-            "public_key": "LA0p/KItVcFDweXAVj+CNU6cWp6SainP+pGtb1wtXgY="
+            "public_key": "LA0p/KItVcFDweXAVj+CNU6cWp6SainP+pGtb1wtXgY=",
+            "public_key_list": [
+                "LA0p_KItVcFDweXAVj-CNU6cWp6SainP-pGtb1wtXgY"
+            ]
         },
         {
             "base_uri": "https://nl.eduvpn.org/",
@@ -43,7 +52,10 @@
                 "nl-NL": "Nederland"
             },
             "logo": "https://static.eduvpn.nl/disco/img/nl.png",
-            "public_key": "Ch84TZEk4k4bvPexrasAvbXjI5YRPmBcK3sZGar71pg="
+            "public_key": "Ch84TZEk4k4bvPexrasAvbXjI5YRPmBcK3sZGar71pg=",
+            "public_key_list": [
+                "Ch84TZEk4k4bvPexrasAvbXjI5YRPmBcK3sZGar71pg"
+            ]
         },
         {
             "base_uri": "https://fed.eduvpn.no/",
@@ -54,7 +66,10 @@
                 "nl-NL": "Noorwegen"
             },
             "logo": "https://static.eduvpn.nl/disco/img/no.png",
-            "public_key": "1V81FxZm7v/A19BJqwFKWy2XlNco13q97NCfkBQr+po="
+            "public_key": "1V81FxZm7v/A19BJqwFKWy2XlNco13q97NCfkBQr+po=",
+            "public_key_list": [
+                "1V81FxZm7v_A19BJqwFKWy2XlNco13q97NCfkBQr-po"
+            ]
         },
         {
             "base_uri": "https://eduvpn.renu.ac.ug/",
@@ -64,7 +79,10 @@
                 "nl-NL": "Oeganda"
             },
             "logo": "https://static.eduvpn.nl/disco/img/ug.png",
-            "public_key": "kx5WJZbam9kqqbewA3d0VaLsDlmt/UW0PJ4P0Z/Axo8="
+            "public_key": "kx5WJZbam9kqqbewA3d0VaLsDlmt/UW0PJ4P0Z/Axo8=",
+            "public_key_list": [
+                "kx5WJZbam9kqqbewA3d0VaLsDlmt_UW0PJ4P0Z_Axo8"
+            ]
         },
         {
             "base_uri": "https://eduvpn.uran.ua/",
@@ -75,9 +93,12 @@
                 "uk-UA": "\u0423\u043a\u0440\u0430\u0457\u043d\u0430"
             },
             "logo": "https://static.eduvpn.nl/disco/img/ua.png",
-            "public_key": "EIk48gTa1AtHl6WiLd6UQYpg6eZGxcjYDU1htfM3TSs="
+            "public_key": "EIk48gTa1AtHl6WiLd6UQYpg6eZGxcjYDU1htfM3TSs=",
+            "public_key_list": [
+                "EIk48gTa1AtHl6WiLd6UQYpg6eZGxcjYDU1htfM3TSs"
+            ]
         }
     ],
-    "seq": 80,
-    "signed_at": "2019-05-08 09:08:07"
+    "seq": 81,
+    "signed_at": "2019-05-13 12:13:46"
 }

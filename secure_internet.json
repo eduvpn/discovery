@@ -11,7 +11,7 @@
             },
             "logo": "https://static.eduvpn.nl/disco/img/au.png",
             "public_key_list": [
-                "vyB0kwxsYK1xU14SepLj7WSzcUO5Y2g8ARtBKVRLLDU"
+                "HpY5RKF0OzYcYUcogKzgt1MvC6CxBmDJoUBsyiKjioA"
             ]
         },
         {
@@ -92,6 +92,6 @@
             ]
         }
     ],
-    "seq": 84,
-    "signed_at": "2019-05-14 10:25:28"
+    "seq": 85,
+    "signed_at": "2019-05-14 11:00:38"
 }

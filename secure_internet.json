@@ -37,7 +37,7 @@
             },
             "logo": "https://static.eduvpn.nl/disco/img/de.png",
             "public_key_list": [
-                "LA0p_KItVcFDweXAVj-CNU6cWp6SainP-pGtb1wtXgY"
+                "ZBNZCR087w6b02WS8wWK5lPu24GBfMct0ekWJ3aW6Zo"
             ]
         },
         {
@@ -88,10 +88,10 @@
             },
             "logo": "https://static.eduvpn.nl/disco/img/ua.png",
             "public_key_list": [
-                "EIk48gTa1AtHl6WiLd6UQYpg6eZGxcjYDU1htfM3TSs"
+                "gCUDsmSIn0pVPc4C-QNLsBil6WxkwDDwxfvTC262p9U"
             ]
         }
     ],
-    "seq": 86,
-    "signed_at": "2019-05-15 06:37:42"
+    "seq": 88,
+    "signed_at": "2019-05-16 21:02:50"
 }

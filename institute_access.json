@@ -35,6 +35,11 @@
             "logo": "https://static.eduvpn.nl/disco/img/nikhef.png"
         },
         {
+            "base_uri": "https://eduvpn.polsl.pl/",
+            "display_name": "Politechnika \u015al\u0105ska",
+            "logo": "https://static.eduvpn.nl/disco/img/polsl.png"
+        },
+        {
             "base_uri": "https://dev-eduvpn.renater.fr/",
             "display_name": "RENATER",
             "logo": "https://static.eduvpn.nl/disco/img/renater.png"
@@ -76,6 +81,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/demo.png"
         }
     ],
-    "seq": 102,
-    "signed_at": "2019-05-16 21:02:50"
+    "seq": 105,
+    "signed_at": "2019-07-12 08:20:23"
 }

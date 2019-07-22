@@ -35,6 +35,11 @@
             "logo": "https://static.eduvpn.nl/disco/img/nikhef.png"
         },
         {
+            "base_uri": "https://eduvpn.hec.gov.pk/",
+            "display_name": "Pakistan Education & Research Network",
+            "logo": "https://static.eduvpn.nl/disco/img/pern.png"
+        },
+        {
             "base_uri": "https://eduvpn.polsl.pl/",
             "display_name": "Politechnika \u015al\u0105ska",
             "logo": "https://static.eduvpn.nl/disco/img/polsl.png"
@@ -81,6 +86,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/demo.png"
         }
     ],
-    "seq": 106,
-    "signed_at": "2019-07-17 09:33:30"
+    "seq": 108,
+    "signed_at": "2019-07-22 17:56:35"
 }

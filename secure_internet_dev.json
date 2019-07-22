@@ -1,18 +1,6 @@
 {
     "authorization_type": "distributed",
-    "instances": [
-        {
-            "base_uri": "https://labrat.eduvpn.nl/",
-            "display_name": {
-                "en-US": "Red (labrat.eduvpn.nl)",
-                "nl-NL": "Rood (labrat.eduvpn.nl)"
-            },
-            "logo": "https://static.eduvpn.nl/disco/img/red.png",
-            "public_key_list": [
-                "mcR9mjKkRP5xKda08zUF64th9gBrNCRblJqHlmk11dE"
-            ]
-        }
-    ],
-    "seq": 108,
-    "signed_at": "2019-07-17 09:33:30"
+    "instances": [],
+    "seq": 110,
+    "signed_at": "2019-07-22 17:56:35"
 }

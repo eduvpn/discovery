@@ -2,16 +2,11 @@
     "authorization_type": "local",
     "instances": [
         {
-            "base_uri": "https://frkovpn.tuxed.net/",
-            "display_name": "eduVPN (frkovpn.tuxed.net)",
-            "logo": "https://static.eduvpn.nl/disco/img/black.png"
-        },
-        {
             "base_uri": "https://vpn.tuxed.net/",
             "display_name": "eduVPN (vpn.tuxed.net)",
             "logo": "https://static.eduvpn.nl/disco/img/pink.png"
         }
     ],
-    "seq": 78,
-    "signed_at": "2019-07-17 09:33:30"
+    "seq": 80,
+    "signed_at": "2019-07-22 17:56:35"
 }

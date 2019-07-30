@@ -68,6 +68,11 @@
             "logo": "https://static.eduvpn.nl/disco/img/stc-group.png"
         },
         {
+            "base_uri": "https://trimbos.eduvpn.nl/",
+            "display_name": "Trimbos-instituut",
+            "logo": "https://static.eduvpn.nl/disco/img/trimbos.png"
+        },
+        {
             "base_uri": "https://uninett.eduvpn.no/",
             "display_name": "Uninett",
             "logo": "https://static.eduvpn.nl/disco/img/uninett.png"
@@ -91,6 +96,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/demo.png"
         }
     ],
-    "seq": 109,
-    "signed_at": "2019-07-29 11:46:32"
+    "seq": 110,
+    "signed_at": "2019-07-30 10:23:50"
 }

@@ -22,6 +22,11 @@
             "logo": "https://static.eduvpn.nl/disco/img/geant.png"
         },
         {
+            "base_uri": "https://eduvpn.heanet.ie/",
+            "display_name": "HEAnet",
+            "logo": "https://static.eduvpn.nl/disco/img/heanet.png"
+        },
+        {
             "base_uri": "https://hku.eduvpn.nl/",
             "display_name": {
                 "en-US": "Utrecht School of the Arts",
@@ -96,6 +101,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/demo.png"
         }
     ],
-    "seq": 110,
-    "signed_at": "2019-07-30 10:23:50"
+    "seq": 111,
+    "signed_at": "2019-07-31 11:28:30"
 }

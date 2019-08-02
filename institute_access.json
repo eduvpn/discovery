@@ -73,6 +73,11 @@
             "logo": "https://static.eduvpn.nl/disco/img/stc-group.png"
         },
         {
+            "base_uri": "https://eduvpn.tuni.fi/",
+            "display_name": "Tampere Universities",
+            "logo": "https://static.eduvpn.nl/disco/img/tuni.png"
+        },
+        {
             "base_uri": "https://trimbos.eduvpn.nl/",
             "display_name": "Trimbos-instituut",
             "logo": "https://static.eduvpn.nl/disco/img/trimbos.png"
@@ -101,6 +106,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/demo.png"
         }
     ],
-    "seq": 111,
-    "signed_at": "2019-07-31 11:28:30"
+    "seq": 112,
+    "signed_at": "2019-08-02 11:03:13"
 }

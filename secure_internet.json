@@ -41,19 +41,6 @@
             ]
         },
         {
-            "base_uri": "https://nl.eduvpn.org/",
-            "display_name": {
-                "da-DK": "Holland",
-                "en-US": "The Netherlands",
-                "nb-NO": "Nederland",
-                "nl-NL": "Nederland"
-            },
-            "logo": "https://static.eduvpn.nl/disco/img/nl.png",
-            "public_key_list": [
-                "O53DTgB956magGaWpVCKtdKIMYqywS3FMAC5fHXdFNg"
-            ]
-        },
-        {
             "base_uri": "https://guest.eduvpn.no/",
             "display_name": {
                 "da-DK": "Norge",
@@ -64,6 +51,29 @@
             "logo": "https://static.eduvpn.nl/disco/img/no.png",
             "public_key_list": [
                 "qOLCcqXWZm9nmjsrwiJQxxWD606vDEJ2MIcc85oJmnE"
+            ]
+        },
+        {
+            "base_uri": "https://vpn.pern.edu.pk/",
+            "display_name": {
+                "en-US": "Pakistan"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/pk.png",
+            "public_key_list": [
+                "LKWFZblpTFvFDY4E_0tnD8yHpK-iOSrJop_1x-A4cQ8"
+            ]
+        },
+        {
+            "base_uri": "https://nl.eduvpn.org/",
+            "display_name": {
+                "da-DK": "Holland",
+                "en-US": "The Netherlands",
+                "nb-NO": "Nederland",
+                "nl-NL": "Nederland"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/nl.png",
+            "public_key_list": [
+                "O53DTgB956magGaWpVCKtdKIMYqywS3FMAC5fHXdFNg"
             ]
         },
         {
@@ -90,18 +100,8 @@
             "public_key_list": [
                 "gCUDsmSIn0pVPc4C-QNLsBil6WxkwDDwxfvTC262p9U"
             ]
-        },
-        {
-            "base_uri": "https://vpn.pern.edu.pk/",
-            "display_name": {
-                "en-US": "Pakistan"
-            },
-            "logo": "https://static.eduvpn.nl/disco/img/pk.png",
-            "public_key_list": [
-                "LKWFZblpTFvFDY4E_0tnD8yHpK-iOSrJop_1x-A4cQ8"
-            ]
         }
     ],
-    "seq": 98,
-    "signed_at": "2019-08-02 11:03:13"
+    "seq": 99,
+    "signed_at": "2019-08-02 11:50:49"
 }

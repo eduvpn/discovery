@@ -7,6 +7,11 @@
             "logo": "https://static.eduvpn.nl/disco/img/demo.png"
         },
         {
+            "base_uri": "https://differ.eduvpn.nl/",
+            "display_name": "DIFFER",
+            "logo": "https://static.eduvpn.nl/disco/img/differ.png"
+        },
+        {
             "base_uri": "https://egi.eduvpn.nl/",
             "display_name": "EGI Foundation",
             "logo": "https://static.eduvpn.nl/disco/img/egi.png"
@@ -106,6 +111,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/hku.png"
         }
     ],
-    "seq": 113,
-    "signed_at": "2019-08-02 11:50:49"
+    "seq": 114,
+    "signed_at": "2019-08-21 08:41:39"
 }

@@ -47,6 +47,11 @@
             "logo": "https://static.eduvpn.nl/disco/img/pern.png"
         },
         {
+            "base_uri": "https://eduvpn.perdanauniversity.edu.my/",
+            "display_name": "Perdana University",
+            "logo": "https://static.eduvpn.nl/disco/img/perdana.png"
+        },
+        {
             "base_uri": "https://eduvpn.polsl.pl/",
             "display_name": "Politechnika \u015al\u0105ska",
             "logo": "https://static.eduvpn.nl/disco/img/polsl.png"
@@ -111,6 +116,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/hku.png"
         }
     ],
-    "seq": 115,
-    "signed_at": "2019-09-23 12:20:18"
+    "seq": 116,
+    "signed_at": "2019-09-26 07:45:02"
 }

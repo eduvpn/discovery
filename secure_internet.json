@@ -84,6 +84,16 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.ac.lk/",
+            "display_name": {
+                "en-US": "Sri Lanka"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/lk.png",
+            "public_key_list": [
+                "drq4-3Sg35UJHxVfx-ssR3onjHihCVH-zjXYPnEfudI"
+            ]
+        },
+        {
             "base_uri": "https://nl.eduvpn.org/",
             "display_name": {
                 "da-DK": "Holland",
@@ -122,6 +132,6 @@
             ]
         }
     ],
-    "seq": 103,
-    "signed_at": "2019-09-30 13:44:35"
+    "seq": 104,
+    "signed_at": "2019-10-10 06:51:27"
 }

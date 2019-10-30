@@ -40,7 +40,8 @@
         {
             "base_uri": "https://eduvpn-poc.renater.fr/",
             "display_name": {
-                "en-US": "France"
+                "en-US": "France",
+                "nb-NO": "Frankrike"
             },
             "logo": "https://static.eduvpn.nl/disco/img/fr.png",
             "public_key_list": [
@@ -132,6 +133,6 @@
             ]
         }
     ],
-    "seq": 104,
-    "signed_at": "2019-10-10 06:51:27"
+    "seq": 105,
+    "signed_at": "2019-10-30 16:29:58"
 }

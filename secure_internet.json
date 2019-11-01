@@ -62,6 +62,16 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.marwan.ma/",
+            "display_name": {
+                "en-US": "Morocco"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/ma.png",
+            "public_key_list": [
+                "aX-El_yRPdcUDF5S2smQ-9U7BzB35_1RtFYSjbHfEz8"
+            ]
+        },
+        {
             "base_uri": "https://guest.eduvpn.no/",
             "display_name": {
                 "da-DK": "Norge",
@@ -133,6 +143,6 @@
             ]
         }
     ],
-    "seq": 105,
-    "signed_at": "2019-10-30 16:29:58"
+    "seq": 106,
+    "signed_at": "2019-11-01 10:59:05"
 }

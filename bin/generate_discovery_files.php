@@ -2,6 +2,9 @@
 
 require_once \dirname(__DIR__).'/vendor/autoload.php';
 
+use VPN\Discovery\Exception\XmlDocumentException;
+use VPN\Discovery\XmlDocument;
+
 // generate the eduVPN application discovery files
 // we need a mapping from IdP to server
 
@@ -17,27 +20,26 @@ foreach ($mappingData as $baseUrl => $instanceData) {
                 continue;
             }
 
-            // extract all entityIDs from the metadata
-            if (false === $xml = @\simplexml_load_string($metadataFileContent)) {
-                echo \sprintf('unable to read metadata from "%s"', $metadataUrl).PHP_EOL;
-                continue;
-            }
-
-            $idpEntityIDs = [];
-            $entityDescriptors = $xml->xpath('//md:EntityDescriptor');
-            foreach ($entityDescriptors as $entityDescriptor) {
-                $ssoCount = \count($entityDescriptor->xpath('md:IDPSSODescriptor'));
-                if (0 !== $ssoCount) {
-                    $idpEntityIDs[] = (string) $entityDescriptor['entityID'];
+            try {
+                $xml = XmlDocument::fromMetadata($metadataFileContent, false);
+                $idpEntityIDs = [];
+                $entityDomNodeList = $xml->domXPath->query('//md:EntityDescriptor');
+                foreach ($entityDomNodeList as $entityDomNode) {
+                    $domNodeList = $xml->domXPath->query('md:IDPSSODescriptor', $entityDomNode);
+                    if (0 !== $domNodeList->length) {
+                        $idpEntityIDs[] = (string) $entityDomNode->getAttribute('entityID');
+                    }
                 }
-            }
 
-            // add to 'global' mapping
-            foreach ($idpEntityIDs as $idpEntityId) {
-                if (!\array_key_exists($idpEntityId, $idpServerMapping)) {
-                    $idpServerMapping[$idpEntityId] = [];
+                // add to 'global' mapping
+                foreach ($idpEntityIDs as $idpEntityId) {
+                    if (!\array_key_exists($idpEntityId, $idpServerMapping)) {
+                        $idpServerMapping[$idpEntityId] = [];
+                    }
+                    $idpServerMapping[$idpEntityId][] = $baseUrl;
                 }
-                $idpServerMapping[$idpEntityId][] = $baseUrl;
+            } catch (XmlDocumentException $e) {
+                echo 'XML ERROR: '.$e->getMessage().PHP_EOL;
             }
         }
     }

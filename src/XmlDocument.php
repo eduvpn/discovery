@@ -55,7 +55,7 @@ class XmlDocument
     /**
      * @param mixed $inputVar
      *
-     * @throws \fkooman\SAML\SP\Exception\XmlDocumentException
+     * @throws \VPN\Discovery\Exception\XmlDocumentException
      *
      * @return \DOMElement
      */
@@ -71,7 +71,7 @@ class XmlDocument
     /**
      * @param mixed $inputVar
      *
-     * @throws \fkooman\SAML\SP\Exception\XmlDocumentException
+     * @throws \VPN\Discovery\Exception\XmlDocumentException
      *
      * @return \DOMNodeList
      */
@@ -87,7 +87,7 @@ class XmlDocument
     /**
      * @param mixed $inputVar
      *
-     * @throws \fkooman\SAML\SP\Exception\XmlDocumentException
+     * @throws \VPN\Discovery\Exception\XmlDocumentException
      *
      * @return string
      */
@@ -108,7 +108,7 @@ class XmlDocument
      * @param string        $xmlStr
      * @param array<string> $schemaFiles
      *
-     * @throws \fkooman\SAML\SP\Exception\XmlDocumentException
+     * @throws \VPN\Discovery\Exception\XmlDocumentException
      *
      * @return self
      */

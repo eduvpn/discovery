@@ -4,6 +4,6 @@ namespace VPN\Discovery\Exception;
 
 use Exception;
 
-class XmlDocumentException extends Exception
+class MetadataParserException extends Exception
 {
 }

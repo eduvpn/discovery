@@ -1,14 +1,18 @@
 <?php
 
-// sort the entries by display_name (en-US)
+if ($argc !== 2) {
+    echo 'ERROR: specify file to sort!' . PHP_EOL;
+    exit(1);
+}
 
+// sort the entries by display_name (en-US)
 $jsonData = json_decode(file_get_contents($argv[1]), true);
 $instanceList = $jsonData['instances'];
 
-usort($instanceList, function($a, $b) {
+usort($instanceList, function ($a, $b) {
     $dA = $a['display_name'];
-    if(is_array($dA)) {
-        if(array_key_exists('en-US', $dA)) {
+    if (is_array($dA)) {
+        if (array_key_exists('en-US', $dA)) {
             $dA = $dA['en-US'];
         } else {
             $dA = array_values($dA)[0];
@@ -16,8 +20,8 @@ usort($instanceList, function($a, $b) {
     }
 
     $dB = $b['display_name'];
-    if(is_array($dB)) {
-        if(array_key_exists('en-US', $dB)) {
+    if (is_array($dB)) {
+        if (array_key_exists('en-US', $dB)) {
             $dB = $dB['en-US'];
         } else {
             $dB = array_values($dB)[0];
@@ -28,4 +32,4 @@ usort($instanceList, function($a, $b) {
 });
 
 $jsonData['instances'] = $instanceList;
-echo json_encode($jsonData, JSON_PRETTY_PRINT);
+echo json_encode($jsonData, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);

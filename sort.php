@@ -28,4 +28,4 @@ usort($instanceList, function($a, $b) {
 });
 
 $jsonData['instances'] = $instanceList;
-echo json_encode($jsonData);
+echo json_encode($jsonData, JSON_PRETTY_PRINT);

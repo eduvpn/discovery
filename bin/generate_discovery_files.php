@@ -9,11 +9,27 @@ use VPN\Discovery\MetadataParserAll;
 @\mkdir(\dirname(__DIR__).'/cache', 0711, true);
 @\mkdir(\dirname(__DIR__).'/output', 0711, true);
 
-$orgList = ['orgList' => []];
+$discoBaseUrl = 'https://argon.tuxed.net/fkooman/eduVPN/discovery/v2';
+$serverGroupUrl = 'https://argon.tuxed.net/fkooman/eduVPN/discovery/v2/secure_internet.json';
+
+$secureInternetList = ['server_list' => []];
+$orgList = ['organization_list' => []];
 $idpServerMapping = [];
 $mappingData = \json_decode(\file_get_contents('mapping.json'), true);
 foreach ($mappingData as $baseUrl => $instanceData) {
+    $instanceData['base_url'] = $baseUrl;
     $metadataUrlList = $instanceData['metadata_url'];
+    unset($instanceData['metadata_url']);
+    $instanceData['logo_uri'] = $instanceData['logo'];
+    unset($instanceData['logo']);
+    if ('secure_internet' === $instanceData['server_type']) {
+        $instanceData['server_group_url'] = $serverGroupUrl;
+        $secureInternetList['server_list'][] = $instanceData;
+    }
+
+    unset($instanceData['public_key_list']);
+    unset($instanceData['server_type']);
+
     if (0 !== \count($metadataUrlList)) {
         foreach ($metadataUrlList as $metadataUrl) {
             try {
@@ -30,15 +46,18 @@ foreach ($mappingData as $baseUrl => $instanceData) {
                 $idpInfoList = $md->get();
                 foreach ($idpInfoList as $idpInfo) {
                     $entityId = $idpInfo->getEntityId();
-                    $orgList['orgList'][] = [
-                        'displayName' => $idpInfo->getDisplayName(),
-                        'orgId' => $entityId,
-                        'keywords' => $idpInfo->getKeywords(),
+                    $orgList['organization_list'][] = [
+                        'display_name' => $idpInfo->getDisplayName(),
+                        'organization_id' => $entityId,
+                        'keyword_list' => $idpInfo->getKeywords(),
+                        'server_info_url' => $discoBaseUrl.'/'.encodeEntityId($entityId).'.json',
                     ];
                     if (!\array_key_exists($entityId, $idpServerMapping)) {
-                        $idpServerMapping[$entityId] = [];
+                        $idpServerMapping[$entityId] = [
+                            'server_list' => [],
+                        ];
                     }
-                    $idpServerMapping[$entityId][] = $instanceData;
+                    $idpServerMapping[$entityId]['server_list'][] = $instanceData;
                 }
             } catch (RuntimeException $e) {
                 \error_log('ERROR: '.$e->getMessage());
@@ -47,7 +66,29 @@ foreach ($mappingData as $baseUrl => $instanceData) {
     }
 }
 
-\file_put_contents('output/org_list.json', \json_encode($orgList, JSON_PRETTY_PRINT));
+\file_put_contents('output/organization_list.json', \json_encode($orgList, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+
+for ($i = 0; $i < \count($secureInternetList['server_list']); ++$i) {
+    unset($secureInternetList['server_list'][$i]['server_group_url']);
+}
+\file_put_contents('output/secure_internet.json', \json_encode($secureInternetList, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 foreach ($idpServerMapping as $idpEntityId => $instanceData) {
-    \file_put_contents('output/'.\urlencode($idpEntityId).'.json', \json_encode($instanceData, JSON_PRETTY_PRINT));
+    \file_put_contents('output/'.encodeEntityId($idpEntityId).'.json', \json_encode($instanceData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+}
+
+/**
+ * @param string $entityId
+ *
+ * @return string
+ */
+function encodeEntityId($entityId)
+{
+    return \str_replace(
+        ['+', '/'],
+        ['-', '_'],
+        \trim(
+            \base64_encode($entityId),
+            '='
+        )
+    );
 }

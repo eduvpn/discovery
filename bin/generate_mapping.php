@@ -37,4 +37,4 @@ foreach ($insacc['instances'] as $instance) {
     $outputData[$baseUri] = $instance;
 }
 
-\file_put_contents('mapping.json', \json_encode($outputData, JSON_PRETTY_PRINT));
+\file_put_contents('mapping.json', \json_encode($outputData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));

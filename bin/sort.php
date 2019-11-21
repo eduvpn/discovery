@@ -30,4 +30,4 @@ $instanceList = $jsonData['instances'];
 });
 
 $jsonData['instances'] = $instanceList;
-echo \json_encode($jsonData);
+echo \json_encode($jsonData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);

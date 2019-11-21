@@ -20,7 +20,8 @@ foreach ($mappingData as $baseUrl => $instanceData) {
     $instanceData['base_url'] = $baseUrl;
     $metadataUrlList = $instanceData['metadata_url'];
     unset($instanceData['metadata_url']);
-    $instanceData['logo_uri'] = $instanceData['logo'];
+    $instanceData['logo_uri'] = objectify($instanceData['logo']);
+    $instanceData['display_name'] = objectify($instanceData['display_name']);
     unset($instanceData['logo']);
     if ('secure_internet' === $instanceData['server_type']) {
         $instanceData['server_group_url'] = $serverGroupUrl;
@@ -91,4 +92,13 @@ function encodeEntityId($entityId)
             '='
         )
     );
+}
+
+function objectify($input)
+{
+    if (\is_array($input)) {
+        return $input;
+    }
+
+    return ['en-US' => $input];
 }

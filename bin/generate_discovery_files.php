@@ -100,5 +100,5 @@ function objectify($input)
         return $input;
     }
 
-    return ['en-US' => $input];
+    return ['en' => $input];
 }

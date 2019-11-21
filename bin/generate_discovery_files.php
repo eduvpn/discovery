@@ -49,7 +49,6 @@ foreach ($mappingData as $baseUrl => $instanceData) {
                     $entityId = $idpInfo->getEntityId();
                     $orgList['organization_list'][] = [
                         'display_name' => $idpInfo->getDisplayName(),
-                        'organization_id' => $entityId,
                         'keyword_list' => $idpInfo->getKeywords(),
                         'server_info_url' => $discoBaseUrl.'/'.encodeEntityId($entityId).'.json',
                     ];
@@ -71,6 +70,7 @@ foreach ($mappingData as $baseUrl => $instanceData) {
 
 for ($i = 0; $i < \count($secureInternetList['server_list']); ++$i) {
     unset($secureInternetList['server_list'][$i]['server_group_url']);
+    unset($secureInternetList['server_list'][$i]['server_type']);
 }
 \file_put_contents('output/secure_internet.json', \json_encode($secureInternetList, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 foreach ($idpServerMapping as $idpEntityId => $instanceData) {

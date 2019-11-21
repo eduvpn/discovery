@@ -41,17 +41,8 @@ class MetadataParserAll
                 throw new MetadataParserException(\sprintf('element "%s" is not an element', $xPathQuery));
             }
 
-            // add the display name also to the keywords to help with search
             $keywords = $this->getKeywords($domElement);
             $displayName = $this->getDisplayName($domElement);
-            if (null !== $displayName) {
-                $keywords = \array_unique(\array_merge($keywords, \explode(' ', $displayName)));
-            }
-
-            // "array_values" is required to have a flat array, as array_unique
-            // preserves keys...
-            $keywords = \array_values($keywords);
-
             $idpInfoList[] = new IdpInfoSimple(
                 $entityId,
                 $keywords,
@@ -63,36 +54,43 @@ class MetadataParserAll
     }
 
     /**
-     * @return array<string>
+     * @return array<string,string>
      */
     private function getKeywords(DOMElement $domElement)
     {
-        $keyWordsList = [];
-        $domNodeList = $this->xmlDocument->domXPath->query('md:Extensions/mdui:UIInfo/mdui:Keywords[@xml:lang="en"]', $domElement);
-        for ($i = 0; $i < $domNodeList->length; ++$i) {
-            $keywordsNode = $domNodeList->item($i);
-            if (null !== $keywordsNode) {
-                $keyWordsList = \array_merge(\explode(' ', $keywordsNode->textContent));
+        $domNodeList = $this->xmlDocument->domXPath->query('md:Extensions/mdui:UIInfo/mdui:Keywords', $domElement);
+        if (0 === $domNodeList->length) {
+            return [];
+        }
+        $keywordList = [];
+        foreach ($domNodeList as $domNode) {
+            if (null === $xmlLang = $domNode->getAttribute('xml:lang')) {
+                $xmlLang = 'en';
             }
+            $keywordList[$xmlLang] = $domNode->textContent;
         }
 
-        return \array_unique($keyWordsList);
+        return $keywordList;
     }
 
     /**
-     * @return string|null
+     * @return array<string,string>|null
      */
     private function getDisplayName(DOMElement $domElement)
     {
-        $domNodeList = $this->xmlDocument->domXPath->query('md:Extensions/mdui:UIInfo/mdui:DisplayName[@xml:lang="en"]', $domElement);
+        $domNodeList = $this->xmlDocument->domXPath->query('md:Extensions/mdui:UIInfo/mdui:DisplayName', $domElement);
         if (0 === $domNodeList->length) {
             return null;
         }
 
-        if (null === $displayNameNode = $domNodeList->item(0)) {
-            return null;
+        $languageList = [];
+        foreach ($domNodeList as $domNode) {
+            if (null === $xmlLang = $domNode->getAttribute('xml:lang')) {
+                $xmlLang = 'en';
+            }
+            $languageList[$xmlLang] = $domNode->textContent;
         }
 
-        return $displayNameNode->textContent;
+        return $languageList;
     }
 }

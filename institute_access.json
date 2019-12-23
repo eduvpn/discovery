@@ -52,6 +52,11 @@
             "logo": "https://static.eduvpn.nl/disco/img/perdana.png"
         },
         {
+            "base_uri": "https://eduvpn.pionier.net.pl/",
+            "display_name": "PIONIER",
+            "logo": "https://static.eduvpn.nl/disco/img/pionier.png"
+        },
+        {
             "base_uri": "https://eduvpn.polsl.pl/",
             "display_name": "Politechnika \u015al\u0105ska",
             "logo": "https://static.eduvpn.nl/disco/img/polsl.png"
@@ -116,6 +121,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/hku.png"
         }
     ],
-    "seq": 122,
-    "signed_at": "2019-11-18 14:40:42"
+    "seq": 123,
+    "signed_at": "2019-12-23 08:22:42"
 }

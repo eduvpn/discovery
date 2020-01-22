@@ -28,6 +28,17 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.eenet.ee/",
+            "display_name": {
+                "et-EE": "Eesti",
+                "en-US": "Estonia"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/ee.png",
+            "public_key_list": [
+                "jGpivOdwCRoLlexYKQjulZPPP4s3d9SVBFslI6RroAo"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn1.funet.fi/",
             "display_name": {
                 "en-US": "Finland",
@@ -140,6 +151,6 @@
             ]
         }
     ],
-    "seq": 110,
-    "signed_at": "2020-01-14 08:33:41"
+    "seq": 111,
+    "signed_at": "2020-01-22 14:34:07"
 }

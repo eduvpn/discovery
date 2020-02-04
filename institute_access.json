@@ -22,7 +22,7 @@
             "logo": "https://static.eduvpn.nl/disco/img/eur.png"
         },
         {
-            "base_uri": "https://geant.eduvpn.nl/",
+            "base_uri": "https://prod-eduvpn01.geant.org/",
             "display_name": "G\u00c9ANT",
             "logo": "https://static.eduvpn.nl/disco/img/geant.png"
         },
@@ -121,6 +121,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/hku.png"
         }
     ],
-    "seq": 127,
-    "signed_at": "2020-01-28 08:30:59"
+    "seq": 128,
+    "signed_at": "2020-02-04 11:16:31"
 }

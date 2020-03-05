@@ -25,6 +25,9 @@
             "logo": "https://static.eduvpn.nl/disco/img/dk.png",
             "public_key_list": [
                 "bRTz33KIuYo_w_-AbzNtdmLDqIm11_eGiHXQniojxY4"
+            ],
+            "support_contact": [
+                "mailto:eduvpn@deic.dk"
             ]
         },
         {
@@ -36,6 +39,9 @@
             "logo": "https://static.eduvpn.nl/disco/img/ee.png",
             "public_key_list": [
                 "jGpivOdwCRoLlexYKQjulZPPP4s3d9SVBFslI6RroAo"
+            ],
+            "support_contact": [
+                "mailto:eduvpn@eenet.ee"
             ]
         },
         {
@@ -48,6 +54,9 @@
             "logo": "https://static.eduvpn.nl/disco/img/fi.png",
             "public_key_list": [
                 "H4NTnM18BJgU_B3r8OBDVblBSfozB2Zu97I_ag2whmM"
+            ],
+            "support_contact": [
+                "mailto:eduvpn@csc.fi"
             ]
         },
         {
@@ -60,6 +69,9 @@
             "logo": "https://static.eduvpn.nl/disco/img/fr.png",
             "public_key_list": [
                 "ePVNzE15h0yS6Xf3s8nJWmc8V6FeFziA3TZr0uOacFg"
+            ],
+            "support_contact": [
+                "https://assistance.renater.fr/"
             ]
         },
         {
@@ -73,6 +85,10 @@
             "logo": "https://static.eduvpn.nl/disco/img/de.png",
             "public_key_list": [
                 "QjJHMit3vhHwLKi-fu2dXXSxMxnkskFVS3hMwyCnWQs"
+            ],
+            "support_contact": [
+                "mailto:eduvpn@dfn.de",
+                "tel:+49308842999120"
             ]
         },
         {
@@ -85,6 +101,10 @@
             "logo": "https://static.eduvpn.nl/disco/img/ma.png",
             "public_key_list": [
                 "aX-El_yRPdcUDF5S2smQ-9U7BzB35_1RtFYSjbHfEz8"
+            ],
+            "support_contact": [
+                "mailto:eduvpn-support@marwan.ma",
+                "tel:+212700062200"
             ]
         },
         {
@@ -98,6 +118,9 @@
             "logo": "https://static.eduvpn.nl/disco/img/no.png",
             "public_key_list": [
                 "qOLCcqXWZm9nmjsrwiJQxxWD606vDEJ2MIcc85oJmnE"
+            ],
+            "support_contact": [
+                "mailto:kontakt@uninett.no"
             ]
         },
         {
@@ -110,6 +133,9 @@
             "logo": "https://static.eduvpn.nl/disco/img/pk.png",
             "public_key_list": [
                 "LKWFZblpTFvFDY4E_0tnD8yHpK-iOSrJop_1x-A4cQ8"
+            ],
+            "support_contact": [
+                "mailto:eduvpn@pern.edu.pk"
             ]
         },
         {
@@ -122,6 +148,9 @@
             "logo": "https://static.eduvpn.nl/disco/img/lk.png",
             "public_key_list": [
                 "drq4-3Sg35UJHxVfx-ssR3onjHihCVH-zjXYPnEfudI"
+            ],
+            "support_contact": [
+                "mailto:eduvpn@learn.ac.lk"
             ]
         },
         {
@@ -135,6 +164,9 @@
             "logo": "https://static.eduvpn.nl/disco/img/nl.png",
             "public_key_list": [
                 "O53DTgB956magGaWpVCKtdKIMYqywS3FMAC5fHXdFNg"
+            ],
+            "support_contact": [
+                "mailto:eduvpn@surfnet.nl"
             ]
         },
         {
@@ -147,6 +179,10 @@
             "logo": "https://static.eduvpn.nl/disco/img/ug.png",
             "public_key_list": [
                 "4plEYRW26amB1-PcRRxWcKlEcDXsUO4yNHnf0VA2MPE"
+            ],
+            "support_contact": [
+                "mailto:technical@renu.ac.ug",
+                "tel:+256783979515"
             ]
         },
         {
@@ -160,9 +196,13 @@
             "logo": "https://static.eduvpn.nl/disco/img/ua.png",
             "public_key_list": [
                 "gCUDsmSIn0pVPc4C-QNLsBil6WxkwDDwxfvTC262p9U"
+            ],
+            "support_contact": [
+                "mailto:dopomoga@uran.ua",
+                "tel:+380442049816"
             ]
         }
     ],
-    "seq": 114,
-    "signed_at": "2020-02-04 11:16:31"
+    "seq": 127,
+    "signed_at": "2020-03-05 14:44:51"
 }

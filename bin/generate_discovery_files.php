@@ -47,11 +47,15 @@ foreach ($mappingData as $baseUrl => $instanceData) {
                 $idpInfoList = $md->get();
                 foreach ($idpInfoList as $idpInfo) {
                     $entityId = $idpInfo->getEntityId();
-                    $orgList['organization_list'][] = [
+                    $orgInfo = [
                         'display_name' => $idpInfo->getDisplayName(),
-                        'keyword_list' => $idpInfo->getKeywords(),
                         'server_info_url' => $discoBaseUrl.'/'.encodeEntityId($entityId).'.json',
                     ];
+                    $keywordsList = $idpInfo->getKeywords();
+                    if (0 !== \count($keywordsList)) {
+                        $orgInfo['keyword_list'] = $keywordsList;
+                    }
+                    $orgList['organization_list'][] = $orgInfo;
                     if (!\array_key_exists($entityId, $idpServerMapping)) {
                         $idpServerMapping[$entityId] = [
                             'server_list' => [],

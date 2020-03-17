@@ -17,6 +17,7 @@ $manualMapping = [
 foreach ($secint['instances'] as $instance) {
     $baseUri = $instance['base_uri'];
     unset($instance['base_uri']);
+    unset($instance['logo']);
     $instance['metadata_url'] = [];
     if (\array_key_exists($baseUri, $manualMapping)) {
         $instance['metadata_url'][] = $manualMapping[$baseUri];
@@ -28,6 +29,7 @@ foreach ($secint['instances'] as $instance) {
 foreach ($insacc['instances'] as $instance) {
     $baseUri = $instance['base_uri'];
     unset($instance['base_uri']);
+    unset($instance['logo']);
     $instance['metadata_url'] = [];
     if (false !== \strpos($baseUri, 'eduvpn.nl/')) {
         // dutch server(s)
@@ -37,4 +39,4 @@ foreach ($insacc['instances'] as $instance) {
     $outputData[$baseUri] = $instance;
 }
 
-\file_put_contents('mapping.json', \json_encode($outputData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+\file_put_contents('mapping.json', \json_encode($outputData, JSON_UNESCAPED_SLASHES));

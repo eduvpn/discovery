@@ -4,7 +4,10 @@
         {
             "base_uri": "https://demo.eduvpn.nl/",
             "display_name": "Demo",
-            "logo": "https://static.eduvpn.nl/disco/img/demo.png"
+            "logo": "https://static.eduvpn.nl/disco/img/demo.png",
+            "support_contact": [
+                "mailto:eduvpn@surfnet.nl"
+            ]
         },
         {
             "base_uri": "https://differ.eduvpn.nl/",
@@ -22,9 +25,12 @@
             "logo": "https://static.eduvpn.nl/disco/img/eur.png"
         },
         {
-            "base_uri": "https://geant.eduvpn.nl/",
+            "base_uri": "https://prod-eduvpn01.geant.org/",
             "display_name": "G\u00c9ANT",
-            "logo": "https://static.eduvpn.nl/disco/img/geant.png"
+            "logo": "https://static.eduvpn.nl/disco/img/geant.png",
+            "support_contact": [
+                "mailto:it@geant.org"
+            ]
         },
         {
             "base_uri": "https://eduvpn.heanet.ie/",
@@ -44,12 +50,23 @@
         {
             "base_uri": "https://eduvpn.hec.gov.pk/",
             "display_name": "Pakistan Education & Research Network",
-            "logo": "https://static.eduvpn.nl/disco/img/pern.png"
+            "logo": "https://static.eduvpn.nl/disco/img/pern.png",
+            "support_contact": [
+                "mailto:eduvpn@pern.edu.pk"
+            ]
         },
         {
             "base_uri": "https://eduvpn.perdanauniversity.edu.my/",
             "display_name": "Perdana University",
-            "logo": "https://static.eduvpn.nl/disco/img/perdana.png"
+            "logo": "https://static.eduvpn.nl/disco/img/perdana.png",
+            "support_contact": [
+                "mailto:it-helpdesk@perdanauniversity.edu.my"
+            ]
+        },
+        {
+            "base_uri": "https://eduvpn.pionier.net.pl/",
+            "display_name": "PIONIER",
+            "logo": "https://static.eduvpn.nl/disco/img/pionier.png"
         },
         {
             "base_uri": "https://eduvpn.polsl.pl/",
@@ -65,11 +82,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/ru.png"
         },
         {
-            "base_uri": "https://dev-eduvpn.renater.fr/",
-            "display_name": "RENATER",
-            "logo": "https://static.eduvpn.nl/disco/img/renater.png"
-        },
-        {
             "base_uri": "https://stc.eduvpn.nl/",
             "display_name": "STC Group",
             "logo": "https://static.eduvpn.nl/disco/img/stc-group.png"
@@ -82,7 +94,10 @@
         {
             "base_uri": "https://eduvpn.tuni.fi/",
             "display_name": "Tampere Universities",
-            "logo": "https://static.eduvpn.nl/disco/img/tuni.png"
+            "logo": "https://static.eduvpn.nl/disco/img/tuni.png",
+            "support_contact": [
+                "mailto:it-helpdesk@tuni.fi"
+            ]
         },
         {
             "base_uri": "https://trimbos.eduvpn.nl/",
@@ -92,12 +107,18 @@
         {
             "base_uri": "https://uninett.eduvpn.no/",
             "display_name": "Uninett",
-            "logo": "https://static.eduvpn.nl/disco/img/uninett.png"
+            "logo": "https://static.eduvpn.nl/disco/img/uninett.png",
+            "support_contact": [
+                "mailto:kontakt@uninett.no"
+            ]
         },
         {
             "base_uri": "https://eduvpn.unit.no/",
             "display_name": "Unit",
-            "logo": "https://static.eduvpn.nl/disco/img/unit.png"
+            "logo": "https://static.eduvpn.nl/disco/img/unit.png",
+            "support_contact": [
+                "mailto:kontakt@uninett.no"
+            ]
         },
         {
             "base_uri": "https://ut.eduvpn.nl/",
@@ -116,6 +137,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/hku.png"
         }
     ],
-    "seq": 120,
-    "signed_at": "2019-11-01 10:59:05"
+    "seq": 142,
+    "signed_at": "2020-03-17 10:13:25"
 }

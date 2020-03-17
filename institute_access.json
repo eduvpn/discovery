@@ -82,14 +82,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/ru.png"
         },
         {
-            "base_uri": "https://dev-eduvpn.renater.fr/",
-            "display_name": "RENATER",
-            "logo": "https://static.eduvpn.nl/disco/img/renater.png",
-            "support_contact": [
-                "https://assistance.renater.fr/"
-            ]
-        },
-        {
             "base_uri": "https://stc.eduvpn.nl/",
             "display_name": "STC Group",
             "logo": "https://static.eduvpn.nl/disco/img/stc-group.png"
@@ -145,6 +137,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/hku.png"
         }
     ],
-    "seq": 141,
-    "signed_at": "2020-03-05 14:44:51"
+    "seq": 142,
+    "signed_at": "2020-03-17 10:13:25"
 }

@@ -120,6 +120,7 @@ function getOrganizationServerList(array $mappingData, $discoBaseUrl)
                         'display_name' => $idpInfo['display_name'],
                         'org_id' => $orgId,
                         'server_info_list' => [],
+                        'server_info_url' => $discoBaseUrl.'/'.encodeId($orgId).'.json',    // XXX this one needs to be removed at some point!
                         'server_info' => encodeId($orgId).'.json',
                     ];
                     if (\array_key_exists('keyword_list', $idpInfo)) {
@@ -139,6 +140,7 @@ function getOrganizationServerList(array $mappingData, $discoBaseUrl)
                         'display_name' => $idpInfo['display_name'],
                         'org_id' => $orgId,
                         'server_info_list' => [],
+                        'server_info_url' => $discoBaseUrl.'/'.encodeId($orgId).'.json',    // XXX this one needs to be removed at some point!
                         'server_info' => encodeId($orgId).'.json',
                     ];
                     if (\array_key_exists('keyword_list', $idpInfo)) {

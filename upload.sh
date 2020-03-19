@@ -12,4 +12,4 @@ do
     rm ${I}
 done
 
-rsync -avzuh -e ssh output/ argon.tuxed.net:/var/www/html/fkooman/eduVPN/discovery/v2 --progress --exclude ".git"
+rsync -avzuh -e ssh output/ spion.eduvpn.nl:/var/www/html/web/disco.eduvpn.org/ --progress --exclude ".git"

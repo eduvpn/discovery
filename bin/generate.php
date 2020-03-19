@@ -9,7 +9,6 @@ use VPN\Discovery\MetadataParserAll;
 @\mkdir(\dirname(__DIR__).'/cache', 0711, true);
 @\mkdir(\dirname(__DIR__).'/output', 0711, true);
 
-$discoBaseUrl = 'https://argon.tuxed.net/fkooman/eduVPN/discovery/v2';
 $discoveryFiles = [
     'secure_internet' => \json_decode(\file_get_contents('secure_internet.json'), true),
     'institute_access' => \json_decode(\file_get_contents('institute_access.json'), true),

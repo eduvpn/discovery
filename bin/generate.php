@@ -38,8 +38,6 @@ $feideSpList = [
     'https://uninett.eduvpn.no/',
 ];
 
-//\file_put_contents('mapping.json', \json_encode(getMapping($discoveryFiles, $metadataMapping, $feideSpList), JSON_UNESCAPED_SLASHES));
-
 // merge existing "secure_internet" and "institute_access" files into one and
 // augment them with information on how to obtain the list of IdPs that can
 // access those servers...
@@ -48,12 +46,14 @@ $mappingData = getMapping($discoveryFiles, $metadataMapping, $feideSpList);
 // now retrieve the information of the IdPs through their SAML metadata URLs or
 // other means...
 $organizationServerList = getOrganizationServerList($mappingData, $discoBaseUrl);
-//echo json_encode($organizationServerList);
 
 // now remove the servers from the entries and put them in separate files
 // based on the "orgId"...
 writeOrganizationList($organizationServerList);
 writeServerFiles($organizationServerList, $discoveryFiles);
+
+// generate HTML
+writeOrganizationListHtml($organizationServerList);
 
 function writeServerFiles(array $organizationServerList, array $discoveryFiles)
 {
@@ -68,7 +68,7 @@ function writeServerFiles(array $organizationServerList, array $discoveryFiles)
 
     foreach ($organizationServerList as $k => $v) {
         $orgId = $v['org_id'];
-        $serverList = $v['server_info'];
+        $serverList = $v['server_info_list'];
         foreach ($serverList as $k => $v) {
             if ('secure_internet' === $serverList[$k]['server_type']) {
                 $serverList[$k]['peer_list'] = $peerList;
@@ -77,7 +77,7 @@ function writeServerFiles(array $organizationServerList, array $discoveryFiles)
             unset($serverList[$k]['metadata_url_list']);
             unset($serverList[$k]['is_feide_sp']);
         }
-        \file_put_contents('output/'.$orgId.'.json', \json_encode(['server_list' => $serverList]));
+        \file_put_contents('output/'.encodeId($orgId).'.json', \json_encode(['server_list' => $serverList], JSON_UNESCAPED_SLASHES));
     }
 }
 
@@ -85,10 +85,24 @@ function writeOrganizationList(array $organizationServerList)
 {
     // we only need to remove server_info from the entries
     foreach ($organizationServerList as $k => $v) {
-        unset($organizationServerList[$k]['server_info']);
+        unset($organizationServerList[$k]['server_info_list']);
     }
 
-    \file_put_contents('output/organization_list.json', \json_encode(['organization_list' => $organizationServerList]));
+    \file_put_contents('output/organization_list.json', \json_encode(['organization_list' => $organizationServerList], JSON_UNESCAPED_SLASHES));
+}
+
+function writeOrganizationListHtml(array $organizationServerList)
+{
+    $oSL = [];
+    foreach ($organizationServerList as $k => $v) {
+        // read the JSON file
+        $serverJson = \json_decode(\file_get_contents('output/'.$v['server_info']), true);
+        unset($v['server_info_list']);
+        $v['server_list'] = $serverJson['server_list'];
+        $oSL[] = $v;
+    }
+
+    \file_put_contents('output/organization_list.html', tplRender('organization_list', ['orgList' => $oSL]));
 }
 
 function getOrganizationServerList(array $mappingData, $discoBaseUrl)
@@ -104,15 +118,15 @@ function getOrganizationServerList(array $mappingData, $discoBaseUrl)
                 if (!\array_key_exists($orgId, $orgInfo)) {
                     $orgInfo[$orgId] = [
                         'display_name' => $idpInfo['display_name'],
-                        'org_id' => encodeId($orgId),
-                        'server_info' => [],
-                        'server_info_url' => $discoBaseUrl.'/'.encodeId($orgId).'.json',    // XXX this one needs to be removed at some point!
+                        'org_id' => $orgId,
+                        'server_info_list' => [],
+                        'server_info' => encodeId($orgId).'.json',
                     ];
                     if (\array_key_exists('keyword_list', $idpInfo)) {
                         $orgInfo[$orgId]['keyword_list'] = $idpInfo['keyword_list'];
                     }
                 }
-                $orgInfo[$orgId]['server_info'][] = $serverInfo;
+                $orgInfo[$orgId]['server_info_list'][] = $serverInfo;
             }
         }
         if (0 !== \count($serverInfo['metadata_url_list'])) {
@@ -123,15 +137,15 @@ function getOrganizationServerList(array $mappingData, $discoBaseUrl)
                 if (!\array_key_exists($orgId, $orgInfo)) {
                     $orgInfo[$orgId] = [
                         'display_name' => $idpInfo['display_name'],
-                        'org_id' => encodeId($orgId),
-                        'server_info' => [],
-                        'server_info_url' => $discoBaseUrl.'/'.encodeId($orgId).'.json',  // XXX this one needs to be removed at some point!
+                        'org_id' => $orgId,
+                        'server_info_list' => [],
+                        'server_info' => encodeId($orgId).'.json',
                     ];
                     if (\array_key_exists('keyword_list', $idpInfo)) {
                         $orgInfo[$orgId]['keyword_list'] = $idpInfo['keyword_list'];
                     }
                 }
-                $orgInfo[$orgId]['server_info'][] = $serverInfo;
+                $orgInfo[$orgId]['server_info_list'][] = $serverInfo;
             }
         }
     }
@@ -258,6 +272,15 @@ function fetchFeideIdpList($feideSpUrl)
     }
 
     return $idpList;
+}
+
+function tplRender($templateName, array $templateVariables = [])
+{
+    \extract($templateVariables);
+    \ob_start();
+    include \dirname(__DIR__).'/tpl/'.$templateName.'.tpl.php';
+
+    return \ob_get_clean();
 }
 
 /**

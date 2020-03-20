@@ -44,7 +44,7 @@ $mappingData = getMapping($discoveryFiles, $metadataMapping, $feideSpList);
 
 // now retrieve the information of the IdPs through their SAML metadata URLs or
 // other means...
-$organizationServerList = getOrganizationServerList($mappingData, $discoBaseUrl);
+$organizationServerList = getOrganizationServerList($mappingData);
 
 // now remove the servers from the entries and put them in separate files
 // based on the "orgId"...
@@ -82,7 +82,7 @@ function writeServerFiles(array $organizationServerList, array $discoveryFiles)
 
 function writeOrganizationList(array $organizationServerList)
 {
-    // we only need to remove server_info from the entries
+    // we only need to remove server_info_list from the entries
     foreach ($organizationServerList as $k => $v) {
         unset($organizationServerList[$k]['server_info_list']);
     }
@@ -95,7 +95,7 @@ function writeOrganizationListHtml(array $organizationServerList)
     $oSL = [];
     foreach ($organizationServerList as $k => $v) {
         // read the JSON file
-        $serverJson = \json_decode(\file_get_contents('output/'.$v['server_info']), true);
+        $serverJson = \json_decode(\file_get_contents('output/'.$v['server_list']), true);
         unset($v['server_info_list']);
         $v['server_list'] = $serverJson['server_list'];
         $oSL[] = $v;
@@ -104,7 +104,7 @@ function writeOrganizationListHtml(array $organizationServerList)
     \file_put_contents('output/organization_list.html', tplRender('organization_list', ['orgList' => $oSL]));
 }
 
-function getOrganizationServerList(array $mappingData, $discoBaseUrl)
+function getOrganizationServerList(array $mappingData)
 {
     $orgInfo = [];
     foreach ($mappingData as $baseUrl => $serverInfo) {
@@ -119,7 +119,7 @@ function getOrganizationServerList(array $mappingData, $discoBaseUrl)
                         'display_name' => $idpInfo['display_name'],
                         'org_id' => $orgId,
                         'server_info_list' => [],
-                        'server_info' => encodeId($orgId).'.json',
+                        'server_list' => encodeId($orgId).'.json',
                     ];
                     if (\array_key_exists('keyword_list', $idpInfo)) {
                         $orgInfo[$orgId]['keyword_list'] = $idpInfo['keyword_list'];
@@ -138,7 +138,7 @@ function getOrganizationServerList(array $mappingData, $discoBaseUrl)
                         'display_name' => $idpInfo['display_name'],
                         'org_id' => $orgId,
                         'server_info_list' => [],
-                        'server_info' => encodeId($orgId).'.json',
+                        'server_list' => encodeId($orgId).'.json',
                     ];
                     if (\array_key_exists('keyword_list', $idpInfo)) {
                         $orgInfo[$orgId]['keyword_list'] = $idpInfo['keyword_list'];

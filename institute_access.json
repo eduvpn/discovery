@@ -2,6 +2,14 @@
     "authorization_type": "local",
     "instances": [
         {
+            "base_uri": "https://sunset.nuonet.fr/",
+            "display_name": "CNOUS",
+            "logo": "https://static.eduvpn.nl/disco/img/crous.png",
+            "support_contact": [
+                "mailto:support-technique-nuo@listes.nuonet.fr"
+            ]
+        },
+        {
             "base_uri": "https://demo.eduvpn.nl/",
             "display_name": "Demo",
             "logo": "https://static.eduvpn.nl/disco/img/demo.png",
@@ -137,6 +145,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/hku.png"
         }
     ],
-    "seq": 142,
-    "signed_at": "2020-03-17 10:13:25"
+    "seq": 145,
+    "signed_at": "2020-03-20 14:40:55"
 }

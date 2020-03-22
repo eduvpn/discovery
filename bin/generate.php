@@ -14,21 +14,45 @@ $discoveryFiles = [
     'institute_access' => \json_decode(\file_get_contents('institute_access.json'), true),
 ];
 
+// add extra VPN servers
+$discoveryFiles['institute_access']['instances'][] = [
+    'base_uri' => 'https://vpn.tuxed.net/',
+    'display_name' => 'vpn.tuxed.net',
+];
+$discoveryFiles['institute_access']['instances'][] = [
+    'base_uri' => 'https://vpn-dev.tuxed.net/',
+    'display_name' => 'vpn-dev.tuxed.net',
+];
+$discoveryFiles['institute_access']['instances'][] = [
+    'base_uri' => 'https://vpn-stable.tuxed.net/',
+    'display_name' => 'vpn-stable.tuxed.net',
+];
+$discoveryFiles['institute_access']['instances'][] = [
+    'base_uri' => 'https://eduvpn.fyrkat.no/',
+    'display_name' => 'eduvpn.fyrkat.no',
+];
+
 $metadataMapping = [
-    'https://nl.eduvpn.org/' => 'https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://nl.eduvpn.org/saml',
-    'https://eduvpn1.eduvpn.de/' => 'https://www.aai.dfn.de/fileadmin/metadata/dfn-aai-basic-metadata.xml',
-    'https://eduvpn.deic.dk/' => 'https://metadata.wayf.dk/birk-idp.xml',
-    'https://demo.eduvpn.nl/' => 'https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://demo.eduvpn.nl/saml',
-    'https://differ.eduvpn.nl/' => 'https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://differ.eduvpn.nl/saml',
-    'https://egi.eduvpn.nl/' => 'https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://egi.eduvpn.nl/saml',
-    'https://eur.eduvpn.nl/' => 'https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://eur.eduvpn.nl/saml',
-    'https://esciencecenter.eduvpn.nl/' => 'https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://esciencecenter.eduvpn.nl/saml',
-    'https://nikhef.eduvpn.nl/' => 'https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://nikhef.eduvpn.nl/saml',
-    'https://ru.eduvpn.nl/' => 'https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://ru.eduvpn.nl/saml',
-    'https://stc.eduvpn.nl/' => 'https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://stc.eduvpn.nl/saml',
-    'https://surfnet.eduvpn.nl/' => 'https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://surfnet.eduvpn.nl/saml',
-    'https://ut.eduvpn.nl/' => 'https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://ut.eduvpn.nl/saml',
-    'https://hku.eduvpn.nl/' => 'https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://hku.eduvpn.nl/saml',
+    'https://nl.eduvpn.org/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://nl.eduvpn.org/saml'],
+    'https://eduvpn1.eduvpn.de/' => ['https://www.aai.dfn.de/fileadmin/metadata/dfn-aai-basic-metadata.xml'],
+    'https://eduvpn.deic.dk/' => ['https://metadata.wayf.dk/birk-idp.xml'],
+    'https://demo.eduvpn.nl/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://demo.eduvpn.nl/saml'],
+    'https://differ.eduvpn.nl/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://differ.eduvpn.nl/saml'],
+    'https://egi.eduvpn.nl/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://egi.eduvpn.nl/saml'],
+    'https://eur.eduvpn.nl/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://eur.eduvpn.nl/saml'],
+    'https://esciencecenter.eduvpn.nl/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://esciencecenter.eduvpn.nl/saml'],
+    'https://nikhef.eduvpn.nl/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://nikhef.eduvpn.nl/saml'],
+    'https://ru.eduvpn.nl/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://ru.eduvpn.nl/saml'],
+    'https://stc.eduvpn.nl/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://stc.eduvpn.nl/saml'],
+    'https://surfnet.eduvpn.nl/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://surfnet.eduvpn.nl/saml'],
+    'https://ut.eduvpn.nl/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://ut.eduvpn.nl/saml'],
+    'https://hku.eduvpn.nl/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://hku.eduvpn.nl/saml'],
+
+    // extra VPN servers
+    'https://vpn.tuxed.net/' => ['https://idp.tuxed.net/metadata', 'https://idp.fyrkat.no/saml2/idp/metadata.php'],
+    'https://vpn-dev.tuxed.net/' => ['https://idp.tuxed.net/metadata'],
+    'https://vpn-stable.tuxed.net/' => ['https://idp.tuxed.net/metadata'],
+    'https://eduvpn.fyrkat.no/' => ['https://idp.fyrkat.no/saml2/idp/metadata.php'],
 ];
 
 $feideSpList = [
@@ -162,7 +186,7 @@ function getMapping(array $discoveryFiles, array $metadataMapping, array $feideS
             $isFeideSp = false;
 
             if (\array_key_exists($baseUri, $metadataMapping)) {
-                $metadataUrlList[] = $metadataMapping[$baseUri];
+                $metadataUrlList = \array_merge($metadataUrlList, $metadataMapping[$baseUri]);
             }
             if (\in_array($baseUri, $feideSpList, true)) {
                 $isFeideSp = true;

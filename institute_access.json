@@ -137,6 +137,18 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.uminho.pt/",
+            "display_name": {
+                "en-US": "University of Minho",
+                "pt-PT": "Universidade do Minho"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/uminho.png",
+            "support_contact": [
+                "mailto:servicedesk@scom.uminho.pt",
+                "tel:+351253601000"
+            ]
+        },
+        {
             "base_uri": "https://ut.eduvpn.nl/",
             "display_name": {
                 "en-US": "University of Twente",
@@ -153,6 +165,6 @@
             "logo": "https://static.eduvpn.nl/disco/img/hku.png"
         }
     ],
-    "seq": 146,
-    "signed_at": "2020-03-20 16:48:40"
+    "seq": 147,
+    "signed_at": "2020-03-25 12:33:23"
 }

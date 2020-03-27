@@ -173,8 +173,19 @@
                 "nl-NL": "Hogeschool voor de Kunsten Utrecht"
             },
             "logo": "https://static.eduvpn.nl/disco/img/hku.png"
+        },
+        {
+            "base_uri": "https://hiof.eduvpn.no/",
+            "display_name": {
+                "en": "\u00d8stfold University College",
+                "nb": "H\u00f8gskolen i \u00d8stfold"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/hiof.png",
+            "support_contact": [
+                "mailto:kontakt@uninett.no"
+            ]
         }
     ],
-    "seq": 148,
-    "signed_at": "2020-03-26 13:51:51"
+    "seq": 149,
+    "signed_at": "2020-03-27 10:23:12"
 }

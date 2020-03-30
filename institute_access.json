@@ -159,6 +159,19 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.uni-osnabrueck.de/",
+            "display_name": {
+                "en-US": "University of Osnabr\u00fcck",
+                "de-DE": "Universit\u00e4t Osnabr\u00fcck"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/uni-os.png",
+            "support_contact": [
+                "https://www.rz.uni-osnabrueck.de/dienste/beratung/beratungsteam/index.html",
+                "tel:+495419693333",
+                "mailto:Beratung@rz.uni-osnabrueck.de"
+            ]
+        },
+        {
             "base_uri": "https://ut.eduvpn.nl/",
             "display_name": {
                 "en-US": "University of Twente",
@@ -186,6 +199,6 @@
             ]
         }
     ],
-    "seq": 149,
-    "signed_at": "2020-03-27 10:23:12"
+    "seq": 150,
+    "signed_at": "2020-03-30 14:58:08"
 }

@@ -92,7 +92,10 @@
         {
             "base_uri": "https://eduvpn.pionier.net.pl/",
             "display_name": "PIONIER",
-            "logo": "https://static.eduvpn.nl/disco/img/pionier.png"
+            "logo": "https://static.eduvpn.nl/disco/img/pionier.png",
+            "support_contact": [
+                "mailto:contact@eduvpn.pionier.net.pl"
+            ]
         },
         {
             "base_uri": "https://eduvpn.polsl.pl/",
@@ -199,6 +202,6 @@
             ]
         }
     ],
-    "seq": 150,
-    "signed_at": "2020-03-30 14:58:08"
+    "seq": 151,
+    "signed_at": "2020-03-31 22:40:32"
 }

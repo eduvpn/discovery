@@ -191,6 +191,14 @@
             "logo": "https://static.eduvpn.nl/disco/img/hku.png"
         },
         {
+            "base_uri": "https://eduvpn.vamk.fi/",
+            "display_name": "VAMK - University of Applied Sciences",
+            "logo": "https://static.eduvpn.nl/disco/img/vamk.png",
+            "support_contact": [
+                "mailto:helpdesk@vamk.fi"
+            ]
+        },
+        {
             "base_uri": "https://hiof.eduvpn.no/",
             "display_name": {
                 "en": "\u00d8stfold University College",
@@ -202,6 +210,6 @@
             ]
         }
     ],
-    "seq": 151,
-    "signed_at": "2020-03-31 22:40:32"
+    "seq": 152,
+    "signed_at": "2020-04-02 13:09:35"
 }

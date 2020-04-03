@@ -26,6 +26,15 @@
             ]
         },
         {
+            "base_uri": "https://access.diak.fi/",
+            "display_name": "DIAK",
+            "logo": "https://static.eduvpn.nl/disco/img/diak.png",
+            "support_contact": [
+                "mailto:tuki@diak.fi",
+                "tel:+358294696070"
+            ]
+        },
+        {
             "base_uri": "https://differ.eduvpn.nl/",
             "display_name": "DIFFER",
             "logo": "https://static.eduvpn.nl/disco/img/differ.png"
@@ -210,6 +219,6 @@
             ]
         }
     ],
-    "seq": 152,
-    "signed_at": "2020-04-02 13:09:35"
+    "seq": 153,
+    "signed_at": "2020-04-03 12:27:38"
 }

@@ -2,6 +2,20 @@
     "authorization_type": "distributed",
     "instances": [
         {
+            "base_uri": "https://eduvpn.rash.al/",
+            "display_name": {
+                "en-US": "Albania",
+                "sq-AL": "Shqiperi"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/al.png",
+            "public_key_list": [
+                "Xv3l24gbMX8NtTnFQbWO2fGKPwKuc6EbjQDv8qw2GVk"
+            ],
+            "support_contact": [
+                "mailto:helpdesk@rash.al"
+            ]
+        },
+        {
             "base_uri": "https://gdpt-eduvpndev1.tnd.aarnet.edu.au/",
             "display_name": {
                 "da-DK": "Australien",
@@ -203,6 +217,6 @@
             ]
         }
     ],
-    "seq": 139,
-    "signed_at": "2020-04-03 12:27:38"
+    "seq": 140,
+    "signed_at": "2020-04-03 15:27:25"
 }

@@ -181,6 +181,17 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.unimes.fr/",
+            "display_name": {
+                "en": "University of Nimes",
+                "fr": "Universit\u00e9 de Nimes"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/unimes.png",
+            "support_contact": [
+                "mailto:eduvpn@unimes.fr"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn.uni-osnabrueck.de/",
             "display_name": {
                 "en-US": "University of Osnabr\u00fcck",
@@ -229,6 +240,6 @@
             ]
         }
     ],
-    "seq": 156,
-    "signed_at": "2020-04-03 20:42:36"
+    "seq": 157,
+    "signed_at": "2020-04-10 12:38:08"
 }

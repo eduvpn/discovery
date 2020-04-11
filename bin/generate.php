@@ -14,7 +14,7 @@ $discoveryFiles = [
     'institute_access' => \json_decode(\file_get_contents('institute_access.json'), true),
 ];
 
-// add extra VPN servers
+// add additional (test) VPN servers
 $discoveryFiles['institute_access']['instances'][] = [
     'base_uri' => 'https://vpn.tuxed.net/',
     'display_name' => 'vpn.tuxed.net',
@@ -22,10 +22,6 @@ $discoveryFiles['institute_access']['instances'][] = [
 $discoveryFiles['institute_access']['instances'][] = [
     'base_uri' => 'https://vpn-dev.tuxed.net/',
     'display_name' => 'vpn-dev.tuxed.net',
-];
-$discoveryFiles['institute_access']['instances'][] = [
-    'base_uri' => 'https://vpn-stable.tuxed.net/',
-    'display_name' => 'vpn-stable.tuxed.net',
 ];
 $discoveryFiles['institute_access']['instances'][] = [
     'base_uri' => 'https://eduvpn.fyrkat.no/',
@@ -48,10 +44,9 @@ $metadataMapping = [
     'https://ut.eduvpn.nl/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://ut.eduvpn.nl/saml'],
     'https://hku.eduvpn.nl/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://hku.eduvpn.nl/saml'],
 
-    // extra VPN servers
+    // additional (test) VPN servers
     'https://vpn.tuxed.net/' => ['https://idp.tuxed.net/metadata', 'https://idp.fyrkat.no/saml2/idp/metadata.php'],
     'https://vpn-dev.tuxed.net/' => ['https://idp.tuxed.net/metadata'],
-    'https://vpn-stable.tuxed.net/' => ['https://idp.tuxed.net/metadata'],
     'https://eduvpn.fyrkat.no/' => ['https://idp.fyrkat.no/saml2/idp/metadata.php'],
 ];
 
@@ -59,6 +54,7 @@ $feideSpList = [
     'https://guest.eduvpn.no/',
     'https://eduvpn.unit.no/',
     'https://uninett.eduvpn.no/',
+    'https://hiof.eduvpn.no/',
 ];
 
 // merge existing "secure_internet" and "institute_access" files into one and
@@ -100,7 +96,8 @@ function writeServerFiles(array $organizationServerList, array $discoveryFiles)
             unset($serverList[$k]['metadata_url_list']);
             unset($serverList[$k]['is_feide_sp']);
         }
-        \file_put_contents('output/'.encodeId($orgId).'.json', \json_encode(['server_list' => $serverList], JSON_UNESCAPED_SLASHES));
+        $newVersion = incrementFileVersion('output/'.encodeId($orgId).'.json');
+        \file_put_contents('output/'.encodeId($orgId).'.json', \json_encode(['v' => $newVersion, 'server_list' => $serverList], JSON_UNESCAPED_SLASHES));
     }
 }
 
@@ -111,7 +108,8 @@ function writeOrganizationList(array $organizationServerList)
         unset($organizationServerList[$k]['server_info_list']);
     }
 
-    \file_put_contents('output/organization_list.json', \json_encode(['organization_list' => $organizationServerList], JSON_UNESCAPED_SLASHES));
+    $newVersion = incrementFileVersion('output/organization_list.json');
+    \file_put_contents('output/organization_list.json', \json_encode(['v' => $newVersion, 'organization_list' => $organizationServerList], JSON_UNESCAPED_SLASHES));
 }
 
 function writeOrganizationListHtml(array $organizationServerList)
@@ -321,4 +319,34 @@ function encodeId($i)
             '='
         )
     );
+}
+
+/**
+ * @param string $jsonFile
+ *
+ * @return string
+ */
+function incrementFileVersion($jsonFile)
+{
+    $dateTime = new DateTime();
+    $todayPrefix = $dateTime->format('Ymd');
+    if (!\file_exists($jsonFile)) {
+        return $todayPrefix.'00';
+    }
+    $jsonData = \json_decode(\file_get_contents($jsonFile), true);
+    if (!\array_key_exists('v', $jsonData)) {
+        return $todayPrefix.'00';
+    }
+
+    $currentVersion = $jsonData['v'];
+    // check whether Ymd is the same
+    if (\substr($currentVersion, 0, 8) !== $todayPrefix) {
+        // not same date
+        return $todayPrefix.'00';
+    }
+
+    // same date, increment last two digits
+    $lastDigits = (int) \substr($currentVersion, 8);
+
+    return \sprintf('%s%02d', $todayPrefix, $lastDigits + 1);
 }

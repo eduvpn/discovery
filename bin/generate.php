@@ -96,8 +96,7 @@ function writeServerFiles(array $organizationServerList, array $discoveryFiles)
             unset($serverList[$k]['metadata_url_list']);
             unset($serverList[$k]['is_feide_sp']);
         }
-        $newVersion = incrementFileVersion('output/'.encodeId($orgId).'.json');
-        \file_put_contents('output/'.encodeId($orgId).'.json', \json_encode(['v' => $newVersion, 'server_list' => $serverList], JSON_UNESCAPED_SLASHES));
+        \file_put_contents('output/'.encodeId($orgId).'.json', \json_encode(['v' => getAtomDate(), 'server_list' => $serverList], JSON_UNESCAPED_SLASHES));
     }
 }
 
@@ -107,9 +106,7 @@ function writeOrganizationList(array $organizationServerList)
     foreach ($organizationServerList as $k => $v) {
         unset($organizationServerList[$k]['server_info_list']);
     }
-
-    $newVersion = incrementFileVersion('output/organization_list.json');
-    \file_put_contents('output/organization_list.json', \json_encode(['v' => $newVersion, 'organization_list' => $organizationServerList], JSON_UNESCAPED_SLASHES));
+    \file_put_contents('output/organization_list.json', \json_encode(['v' => getAtomDate(), 'organization_list' => $organizationServerList], JSON_UNESCAPED_SLASHES));
 }
 
 function writeOrganizationListHtml(array $organizationServerList)
@@ -322,31 +319,11 @@ function encodeId($i)
 }
 
 /**
- * @param string $jsonFile
- *
  * @return string
  */
-function incrementFileVersion($jsonFile)
+function getAtomDate()
 {
     $dateTime = new DateTime();
-    $todayPrefix = $dateTime->format('Ymd');
-    if (!\file_exists($jsonFile)) {
-        return $todayPrefix.'00';
-    }
-    $jsonData = \json_decode(\file_get_contents($jsonFile), true);
-    if (!\array_key_exists('v', $jsonData)) {
-        return $todayPrefix.'00';
-    }
 
-    $currentVersion = $jsonData['v'];
-    // check whether Ymd is the same
-    if (\substr($currentVersion, 0, 8) !== $todayPrefix) {
-        // not same date
-        return $todayPrefix.'00';
-    }
-
-    // same date, increment last two digits
-    $lastDigits = (int) \substr($currentVersion, 8);
-
-    return \sprintf('%s%02d', $todayPrefix, $lastDigits + 1);
+    return $dateTime->format(DateTime::ATOM);
 }

@@ -45,6 +45,14 @@
             "logo": "https://static.eduvpn.nl/disco/img/egi.png"
         },
         {
+            "base_uri": "https://eduvpn.ensma.fr/",
+            "display_name": "Ensma",
+            "logo": "https://static.eduvpn.nl/disco/img/ensma.png",
+            "support_contact": [
+                "mailto:dsi@ensma.fr"
+            ]
+        },
+        {
             "base_uri": "https://eur.eduvpn.nl/",
             "display_name": "Erasmus University Rotterdam",
             "logo": "https://static.eduvpn.nl/disco/img/eur.png"
@@ -240,6 +248,6 @@
             ]
         }
     ],
-    "seq": 157,
-    "signed_at": "2020-04-10 12:38:08"
+    "seq": 158,
+    "signed_at": "2020-04-22 14:29:14"
 }

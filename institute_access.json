@@ -26,6 +26,15 @@
             ]
         },
         {
+            "base_uri": "https://access.diak.fi/",
+            "display_name": "DIAK",
+            "logo": "https://static.eduvpn.nl/disco/img/diak.png",
+            "support_contact": [
+                "mailto:tuki@diak.fi",
+                "tel:+358294696070"
+            ]
+        },
+        {
             "base_uri": "https://differ.eduvpn.nl/",
             "display_name": "DIFFER",
             "logo": "https://static.eduvpn.nl/disco/img/differ.png"
@@ -34,6 +43,14 @@
             "base_uri": "https://egi.eduvpn.nl/",
             "display_name": "EGI Foundation",
             "logo": "https://static.eduvpn.nl/disco/img/egi.png"
+        },
+        {
+            "base_uri": "https://eduvpn.ensma.fr/",
+            "display_name": "Ensma",
+            "logo": "https://static.eduvpn.nl/disco/img/ensma.png",
+            "support_contact": [
+                "mailto:dsi@ensma.fr"
+            ]
         },
         {
             "base_uri": "https://eur.eduvpn.nl/",
@@ -52,6 +69,26 @@
             "base_uri": "https://eduvpn.heanet.ie/",
             "display_name": "HEAnet",
             "logo": "https://static.eduvpn.nl/disco/img/heanet.png"
+        },
+        {
+            "base_uri": "https://eduvpn.hs-osnabrueck.de/",
+            "display_name": "Hochschule Osnabr\u00fcck",
+            "logo": "https://static.eduvpn.nl/disco/img/hs-os.png",
+            "support_contact": [
+                "https://www.hs-osnabrueck.de/servicedesk/",
+                "tel:+495419697100",
+                "mailto:servicedesk@hs-osnabrueck.de"
+            ]
+        },
+        {
+            "base_uri": "https://eduvpn.ipb.pt/",
+            "display_name": "Instituto Polit\u00e9cnico de Bragan\u00e7a",
+            "logo": "https://static.eduvpn.nl/disco/img/ipb.png",
+            "support_contact": [
+                "mailto:ccom@ipb.pt",
+                "http://www.ipb.pt/si",
+                "tel:+351273303050"
+            ]
         },
         {
             "base_uri": "https://esciencecenter.eduvpn.nl/",
@@ -82,7 +119,10 @@
         {
             "base_uri": "https://eduvpn.pionier.net.pl/",
             "display_name": "PIONIER",
-            "logo": "https://static.eduvpn.nl/disco/img/pionier.png"
+            "logo": "https://static.eduvpn.nl/disco/img/pionier.png",
+            "support_contact": [
+                "mailto:contact@eduvpn.pionier.net.pl"
+            ]
         },
         {
             "base_uri": "https://eduvpn.polsl.pl/",
@@ -137,6 +177,42 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.uminho.pt/",
+            "display_name": {
+                "en-US": "University of Minho",
+                "pt-PT": "Universidade do Minho"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/uminho.png",
+            "support_contact": [
+                "mailto:servicedesk@scom.uminho.pt",
+                "tel:+351253601000"
+            ]
+        },
+        {
+            "base_uri": "https://eduvpn.unimes.fr/",
+            "display_name": {
+                "en": "University of Nimes",
+                "fr": "Universit\u00e9 de Nimes"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/unimes.png",
+            "support_contact": [
+                "mailto:eduvpn@unimes.fr"
+            ]
+        },
+        {
+            "base_uri": "https://eduvpn.uni-osnabrueck.de/",
+            "display_name": {
+                "en-US": "University of Osnabr\u00fcck",
+                "de-DE": "Universit\u00e4t Osnabr\u00fcck"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/uni-os.png",
+            "support_contact": [
+                "https://www.rz.uni-osnabrueck.de/dienste/beratung/beratungsteam/index.html",
+                "tel:+495419693333",
+                "mailto:Beratung@rz.uni-osnabrueck.de"
+            ]
+        },
+        {
             "base_uri": "https://ut.eduvpn.nl/",
             "display_name": {
                 "en-US": "University of Twente",
@@ -151,8 +227,27 @@
                 "nl-NL": "Hogeschool voor de Kunsten Utrecht"
             },
             "logo": "https://static.eduvpn.nl/disco/img/hku.png"
+        },
+        {
+            "base_uri": "https://eduvpn.vamk.fi/",
+            "display_name": "VAMK - University of Applied Sciences",
+            "logo": "https://static.eduvpn.nl/disco/img/vamk.png",
+            "support_contact": [
+                "mailto:helpdesk@vamk.fi"
+            ]
+        },
+        {
+            "base_uri": "https://hiof.eduvpn.no/",
+            "display_name": {
+                "en": "\u00d8stfold University College",
+                "nb": "H\u00f8gskolen i \u00d8stfold"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/hiof.png",
+            "support_contact": [
+                "mailto:kontakt@uninett.no"
+            ]
         }
     ],
-    "seq": 146,
-    "signed_at": "2020-03-20 16:48:40"
+    "seq": 158,
+    "signed_at": "2020-04-22 14:29:14"
 }

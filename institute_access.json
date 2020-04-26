@@ -142,7 +142,8 @@
             "display_name": "RENU",
             "logo": "https://static.eduvpn.nl/disco/img/renu.png",
             "support_contact": [
-                "tel:+256778578075"
+                "tel:+256783979515",
+                "mailto:technical@renu.ac.ug"
             ]
         },
         {
@@ -256,6 +257,6 @@
             ]
         }
     ],
-    "seq": 159,
-    "signed_at": "2020-04-26 19:13:54"
+    "seq": 160,
+    "signed_at": "2020-04-26 19:49:59"
 }

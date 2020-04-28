@@ -161,7 +161,8 @@
             "display_name": "Tampere Universities",
             "logo": "https://static.eduvpn.nl/disco/img/tuni.png",
             "support_contact": [
-                "mailto:it-helpdesk@tuni.fi"
+                "mailto:it-helpdesk@tuni.fi",
+                "https://www.tuni.fi/it-palvelut"
             ]
         },
         {
@@ -257,6 +258,6 @@
             ]
         }
     ],
-    "seq": 160,
-    "signed_at": "2020-04-26 19:49:59"
+    "seq": 161,
+    "signed_at": "2020-04-28 07:46:03"
 }

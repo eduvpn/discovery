@@ -138,6 +138,15 @@
             "logo": "https://static.eduvpn.nl/disco/img/ru.png"
         },
         {
+            "base_uri": "https://leduvpn.renu.ac.ug/",
+            "display_name": "RENU",
+            "logo": "https://static.eduvpn.nl/disco/img/renu.png",
+            "support_contact": [
+                "tel:+256783979515",
+                "mailto:technical@renu.ac.ug"
+            ]
+        },
+        {
             "base_uri": "https://stc.eduvpn.nl/",
             "display_name": "STC Group",
             "logo": "https://static.eduvpn.nl/disco/img/stc-group.png"
@@ -152,7 +161,8 @@
             "display_name": "Tampere Universities",
             "logo": "https://static.eduvpn.nl/disco/img/tuni.png",
             "support_contact": [
-                "mailto:it-helpdesk@tuni.fi"
+                "mailto:it-helpdesk@tuni.fi",
+                "https://www.tuni.fi/it-palvelut"
             ]
         },
         {
@@ -248,6 +258,6 @@
             ]
         }
     ],
-    "seq": 158,
-    "signed_at": "2020-04-22 14:29:14"
+    "seq": 161,
+    "signed_at": "2020-04-28 07:46:03"
 }

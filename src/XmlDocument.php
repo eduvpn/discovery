@@ -24,6 +24,7 @@ class XmlDocument
         $this->domXPath->registerNamespace('saml', 'urn:oasis:names:tc:SAML:2.0:assertion');
         $this->domXPath->registerNamespace('md', 'urn:oasis:names:tc:SAML:2.0:metadata');
         $this->domXPath->registerNamespace('mdui', 'urn:oasis:names:tc:SAML:metadata:ui');
+        $this->domXPath->registerNameSpace('mdattr', 'urn:oasis:names:tc:SAML:metadata:attribute');
         $this->domXPath->registerNamespace('ds', 'http://www.w3.org/2000/09/xmldsig#');
         $this->domXPath->registerNameSpace('xenc', 'http://www.w3.org/2001/04/xmlenc#');
         $this->domXPath->registerNameSpace('shibmd', 'urn:mace:shibboleth:metadata:1.0');

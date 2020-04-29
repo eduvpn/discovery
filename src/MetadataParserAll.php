@@ -31,11 +31,21 @@ class MetadataParserAll
      */
     public function get()
     {
-        $xPathQuery = '//md:EntityDescriptor/md:IDPSSODescriptor';
-        $domNodeList = $this->xmlDocument->domXPath->query($xPathQuery);
         $idpInfoList = [];
-        for ($i = 0; $i < $domNodeList->length; ++$i) {
-            $domElement = $domNodeList->item($i);
+        $xPathQuery = '//md:EntityDescriptor';
+        $domNodeList = $this->xmlDocument->domXPath->query($xPathQuery);
+        foreach ($domNodeList as $domElement) {
+            if ($this->hideFromDiscovery($domElement)) {
+                echo 'HIDE!'.PHP_EOL;
+                continue;
+            }
+            $xPathQuery = 'md:IDPSSODescriptor';
+            $domNodeList = $this->xmlDocument->domXPath->query($xPathQuery, $domElement);
+            if (0 === $domNodeList->length) {
+                continue;
+            }
+
+            $domElement = $domNodeList->item(0);
             $entityId = $this->xmlDocument->domXPath->evaluate('string(parent::node()/@entityID)', $domElement);
             if (!($domElement instanceof DOMElement)) {
                 throw new MetadataParserException(\sprintf('element "%s" is not an element', $xPathQuery));
@@ -51,6 +61,21 @@ class MetadataParserAll
         }
 
         return $idpInfoList;
+    }
+
+    /**
+     * @return bool
+     */
+    private function hideFromDiscovery(DOMElement $domElement)
+    {
+        $aVs = $this->xmlDocument->domXPath->query('md:Extensions/mdattr:EntityAttributes/saml:Attribute[@Name="http://macedir.org/entity-category"]/saml:AttributeValue', $domElement);
+        foreach ($aVs as $dE) {
+            if ('http://refeds.org/category/hide-from-discovery' === $dE->textContent) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**

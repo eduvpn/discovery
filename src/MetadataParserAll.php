@@ -36,7 +36,6 @@ class MetadataParserAll
         $domNodeList = $this->xmlDocument->domXPath->query($xPathQuery);
         foreach ($domNodeList as $domElement) {
             if ($this->hideFromDiscovery($domElement)) {
-                echo 'HIDE!'.PHP_EOL;
                 continue;
             }
             $xPathQuery = 'md:IDPSSODescriptor';

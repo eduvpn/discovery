@@ -247,6 +247,15 @@
             ]
         },
         {
+            "base_uri": "https://vu.eduvpn.nl/",
+            "display_name": "Vrije Universiteit",
+            "logo": "https://static.eduvpn.nl/disco/img/vu.png",
+            "support_contact": [
+                "mailto:servicedesk.it@vu.nl",
+                "tel:+31205980000"
+            ]
+        },
+        {
             "base_uri": "https://hiof.eduvpn.no/",
             "display_name": {
                 "en": "\u00d8stfold University College",
@@ -258,6 +267,6 @@
             ]
         }
     ],
-    "seq": 161,
-    "signed_at": "2020-04-28 07:46:03"
+    "seq": 162,
+    "signed_at": "2020-05-01 12:45:43"
 }

@@ -10,7 +10,7 @@ use VPN\Discovery\MetadataParserAll;
 @\mkdir(\dirname(__DIR__).'/output', 0711, true);
 
 $metadataMapping = [
-    'https://nl.eduvpn.org/' => ['https://engine.surfconext.nl/authentication/proxy/idps-metadata?sp-entity-id=https://nl.eduvpn.org/saml'],
+    'https://nl.eduvpn.org/' => ['https://metadata.surfconext.nl/sp/https%253A%252F%252Fnl.eduvpn.org%252Fsaml'],
     'https://eduvpn1.eduvpn.de/' => ['https://www.aai.dfn.de/fileadmin/metadata/dfn-aai-basic-metadata.xml'],
     'https://eduvpn.deic.dk/' => ['https://metadata.wayf.dk/birk-idp.xml'],
 ];
@@ -34,7 +34,7 @@ function writeOrganizationList(array $organizationServerList)
     // we only need to remove server_info_list from the entries
     foreach ($organizationServerList as $k => $v) {
     }
-    \file_put_contents('output/organization_list.json', \json_encode(['v' => getAtomDate(), 'organization_list' => $organizationServerList], JSON_UNESCAPED_SLASHES));
+    \file_put_contents('output/organization_list_2.json', \json_encode(['v' => getAtomDate(), 'organization_list' => $organizationServerList], JSON_UNESCAPED_SLASHES));
 }
 
 function getOrganizationServerList(array $mappingData)

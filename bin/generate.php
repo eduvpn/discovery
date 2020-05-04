@@ -29,6 +29,9 @@ $organizationServerList = getOrganizationServerList($mappingData);
 // based on the "orgId"...
 writeOrganizationList($organizationServerList);
 
+rewriteSecureInternet();
+rewriteInstituteAccess();
+
 function writeOrganizationList(array $organizationServerList)
 {
     // we only need to remove server_info_list from the entries
@@ -204,4 +207,41 @@ function getAtomDate()
     $dateTime = new DateTime();
 
     return $dateTime->format(DateTime::ATOM);
+}
+
+function rewriteSecureInternet()
+{
+    $jsonData = \json_decode(\file_get_contents('secure_internet.json'), true);
+    $outputData = [];
+    foreach ($jsonData['instances'] as $instance) {
+        $d = [
+            'base_url' => $instance['base_uri'],
+            'display_name' => $instance['display_name'],
+            'public_key_list' => $instance['public_key_list'],
+        ];
+        if (\array_key_exists('support_contact', $instance)) {
+            $d['support_contact'] = $instance['support_contact'];
+        }
+        $outputData[] = $d;
+    }
+
+    \file_put_contents('output/server_list_secure_internet.json', \json_encode(['v' => getAtomDate(), 'server_list' => $outputData], JSON_UNESCAPED_SLASHES));
+}
+
+function rewriteInstituteAccess()
+{
+    $jsonData = \json_decode(\file_get_contents('institute_access.json'), true);
+    $outputData = [];
+    foreach ($jsonData['instances'] as $instance) {
+        $d = [
+            'base_url' => $instance['base_uri'],
+            'display_name' => $instance['display_name'],
+        ];
+        if (\array_key_exists('support_contact', $instance)) {
+            $d['support_contact'] = $instance['support_contact'];
+        }
+        $outputData[] = $d;
+    }
+
+    \file_put_contents('output/server_list_institute_access.json', \json_encode(['v' => getAtomDate(), 'server_list' => $outputData], JSON_UNESCAPED_SLASHES));
 }

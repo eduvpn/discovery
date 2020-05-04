@@ -51,7 +51,10 @@ class MetadataParserAll
             }
 
             $keywords = $this->getKeywords($domElement);
-            $displayName = $this->getDisplayName($domElement);
+            if (null === $displayName = $this->getDisplayName($domElement)) {
+                $displayName = $entityId;
+            }
+
             $idpInfoList[] = new IdpInfoSimple(
                 $entityId,
                 $keywords,

@@ -10,7 +10,7 @@ use VPN\Discovery\MetadataParserAll;
 @\mkdir(\dirname(__DIR__).'/output', 0711, true);
 
 $metadataMapping = [
-    'https://nl.eduvpn.org/' => ['https://metadata.surfconext.nl/sp/https%253A%252F%252Fnl.eduvpn.org%252Fsaml'],
+    'https://nl.eduvpn.org/' => ['https://metadata.surfconext.nl/sp/https%253A%252F%252Fnl.eduvpn.org%252Fsaml', 'https://eva-saml-idp.eduroam.nl/simplesamlphp/saml2/idp/metadata.php'],
     'https://eduvpn1.eduvpn.de/' => ['https://www.aai.dfn.de/fileadmin/metadata/dfn-aai-basic-metadata.xml'],
     'https://eduvpn.deic.dk/' => ['https://metadata.wayf.dk/birk-idp.xml'],
 ];

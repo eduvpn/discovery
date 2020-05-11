@@ -166,6 +166,19 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.hochschule-trier.de/",
+            "display_name": {
+                "en": "Trier University of Applied Sciences",
+                "de": "Hochschule Trier"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/hstrier.png",
+            "support_contact": [
+                "https://www.hochschule-trier.de/rzht/it-support",
+                "tel:+496518103555",
+                "mailto:eduvpn@help.hochschule-trier.de"
+            ]
+        },
+        {
             "base_uri": "https://trimbos.eduvpn.nl/",
             "display_name": "Trimbos-instituut",
             "logo": "https://static.eduvpn.nl/disco/img/trimbos.png"
@@ -267,6 +280,6 @@
             ]
         }
     ],
-    "seq": 162,
-    "signed_at": "2020-05-01 12:45:43"
+    "seq": 163,
+    "signed_at": "2020-05-11 16:24:30"
 }

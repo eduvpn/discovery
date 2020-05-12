@@ -166,6 +166,19 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.hochschule-trier.de/",
+            "display_name": {
+                "en": "Trier University of Applied Sciences",
+                "de": "Hochschule Trier"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/hstrier.png",
+            "support_contact": [
+                "https://www.hochschule-trier.de/rzht/it-support",
+                "tel:+496518103555",
+                "mailto:eduvpn@help.hochschule-trier.de"
+            ]
+        },
+        {
             "base_uri": "https://trimbos.eduvpn.nl/",
             "display_name": "Trimbos-instituut",
             "logo": "https://static.eduvpn.nl/disco/img/trimbos.png"
@@ -247,6 +260,15 @@
             ]
         },
         {
+            "base_uri": "https://vu.eduvpn.nl/",
+            "display_name": "Vrije Universiteit",
+            "logo": "https://static.eduvpn.nl/disco/img/vu.png",
+            "support_contact": [
+                "mailto:servicedesk.it@vu.nl",
+                "tel:+31205980000"
+            ]
+        },
+        {
             "base_uri": "https://hiof.eduvpn.no/",
             "display_name": {
                 "en": "\u00d8stfold University College",
@@ -258,6 +280,6 @@
             ]
         }
     ],
-    "seq": 161,
-    "signed_at": "2020-04-28 07:46:03"
+    "seq": 163,
+    "signed_at": "2020-05-11 16:24:30"
 }

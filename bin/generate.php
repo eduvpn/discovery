@@ -37,7 +37,7 @@ function writeOrganizationList(array $organizationServerList)
     // we only need to remove server_info_list from the entries
     foreach ($organizationServerList as $k => $v) {
     }
-    \file_put_contents('output/organization_list_2.json', \json_encode(['v' => getAtomDate(), 'organization_list' => $organizationServerList], JSON_UNESCAPED_SLASHES));
+    \file_put_contents('output/organization_list.json', \json_encode(['v' => getAtomDate(), 'organization_list' => $organizationServerList], JSON_UNESCAPED_SLASHES));
 }
 
 function getOrganizationServerList(array $mappingData)

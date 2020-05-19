@@ -29,8 +29,10 @@ $organizationServerList = getOrganizationServerList($mappingData);
 // based on the "orgId"...
 writeOrganizationList($organizationServerList);
 
-rewriteSecureInternet();
-rewriteInstituteAccess();
+$serverList = [];
+$serverList = \array_merge($serverList, rewriteSecureInternet());
+$serverList = \array_merge($serverList, rewriteInstituteAccess());
+\file_put_contents('output/server_list.json', \json_encode(['v' => getAtomDate(), 'server_list' => $serverList], JSON_UNESCAPED_SLASHES));
 
 function writeOrganizationList(array $organizationServerList)
 {
@@ -215,6 +217,7 @@ function rewriteSecureInternet()
     $outputData = [];
     foreach ($jsonData['instances'] as $instance) {
         $d = [
+            'server_type' => 'secure_internet',
             'base_url' => $instance['base_uri'],
             'display_name' => $instance['display_name'],
             'public_key_list' => $instance['public_key_list'],
@@ -225,7 +228,7 @@ function rewriteSecureInternet()
         $outputData[] = $d;
     }
 
-    \file_put_contents('output/server_list_secure_internet.json', \json_encode(['v' => getAtomDate(), 'server_list' => $outputData], JSON_UNESCAPED_SLASHES));
+    return $outputData;
 }
 
 function rewriteInstituteAccess()
@@ -234,6 +237,7 @@ function rewriteInstituteAccess()
     $outputData = [];
     foreach ($jsonData['instances'] as $instance) {
         $d = [
+            'server_type' => 'institute_access',
             'base_url' => $instance['base_uri'],
             'display_name' => $instance['display_name'],
         ];
@@ -243,5 +247,5 @@ function rewriteInstituteAccess()
         $outputData[] = $d;
     }
 
-    \file_put_contents('output/server_list_institute_access.json', \json_encode(['v' => getAtomDate(), 'server_list' => $outputData], JSON_UNESCAPED_SLASHES));
+    return $outputData;
 }

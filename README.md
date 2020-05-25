@@ -1,31 +1,31 @@
-# Introduction
+These files are used by the eduVPN applications to fascilitate VPN server 
+discovery.
 
-The eduVPN (mobile) applications use a (central) discovery file. This 
-repository contains a copy of them and instructions on how to sign them.
+The JSON files are signed using 
+[minisign](https://jedisct1.github.io/minisign/).
 
-These are the files located at 
-[https://static.eduvpn.nl/disco](https://static.eduvpn.nl/disco).
+To generate a (new) key:
 
-# Signatures
+    $ minisign -G -p disco.pub -s disco.key
 
-We use [php-json-signer](https://git.tuxed.net/fkooman/php-json-signer) to sign
-the JSON discovery file. This **SHOULD** be done **OFFLINE**! 
+To generate the discovery files:
 
-There is also an RPM/DEB package available from the Let's Connect! repository 
-on [https://repo.letsconnect-vpn.org](https://repo.letsconnect-vpn.org) called 
-`php-json-signer`.
+    $ ./generate.sh
 
-# Usage
+To sign:
 
-Sign a discovery file, this will create the file `secure_internet.json.sig` in
-the same directory:
+    $ ./sign.sh
 
-    $ php-json-signer --sign secure_internet.json
+To upload:
 
-Verify the signature:
+    $ ./upload.sh
 
-    $ php-json-signer --verify secure_internet.json
+The files are uploaded to:
 
-To show the public key:
+    https://disco.eduvpn.org/server_list.json
+    https://disco.eduvpn.org/server_list.json.minisig
 
-    $ php-json-signer --show
+And:
+
+    https://disco.eduvpn.org/organization_list.json
+    https://disco.eduvpn.org/organization_list.json.minisig

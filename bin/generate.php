@@ -7,7 +7,7 @@ use VPN\Discovery\MetadataParserAll;
 // generate the eduVPN application discovery files
 // we need a mapping from IdP to server
 @\mkdir(\dirname(__DIR__).'/cache', 0711, true);
-@\mkdir(\dirname(__DIR__).'/output', 0711, true);
+@\mkdir(\dirname(__DIR__).'/out', 0711, true);
 
 $metadataMapping = [
     'https://nl.eduvpn.org/' => ['https://metadata.surfconext.nl/sp/https%253A%252F%252Fnl.eduvpn.org%252Fsaml', 'https://eva-saml-idp.eduroam.nl/simplesamlphp/saml2/idp/metadata.php'],
@@ -32,14 +32,14 @@ writeOrganizationList($organizationServerList);
 $serverList = [];
 $serverList = \array_merge($serverList, rewriteSecureInternet());
 $serverList = \array_merge($serverList, rewriteInstituteAccess());
-\file_put_contents('output/server_list.json', \json_encode(['v' => getAtomDate(), 'server_list' => $serverList], JSON_UNESCAPED_SLASHES));
+\file_put_contents('out/server_list.json', \json_encode(['v' => getAtomDate(), 'server_list' => $serverList], JSON_UNESCAPED_SLASHES));
 
 function writeOrganizationList(array $organizationServerList)
 {
     // we only need to remove server_info_list from the entries
     foreach ($organizationServerList as $k => $v) {
     }
-    \file_put_contents('output/organization_list.json', \json_encode(['v' => getAtomDate(), 'organization_list' => $organizationServerList], JSON_UNESCAPED_SLASHES));
+    \file_put_contents('out/organization_list.json', \json_encode(['v' => getAtomDate(), 'organization_list' => $organizationServerList], JSON_UNESCAPED_SLASHES));
 }
 
 function getOrganizationServerList(array $mappingData)

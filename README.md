@@ -58,7 +58,7 @@ And:
 |    | `eduvpn.deic.dk`                    | Hub/Proxy (`samlp:Scoping`)         | _TBD_ | `https://metadata.wayf.dk/birk-idp.xml` |
 |    | `eduvpn.eenet.ee`                   | Currently broken (mail sent)        | | |
 |    | `eduvpn-poc.renater.fr`             | Seems to have only 1 IdP?           | | | 
-|    | `eduvpn.marwan.ma`                  | Mail sent                           | | |
+|    | `eduvpn.marwan.ma`                  |                                     | `https://eduvpn.marwan.ma/saml/login?ReturnTo=@RETURN_TO@&IdP=@ORG_ID@` | `https://www.eduidm.ma/metadata/eduidm.xml` |
 |    | `guest.eduvpn.no`                   | Mail sent (Feide)                   | | |
 |    | `vpn.pern.edu.pk`                   |                                     | | |
 |    | `eduvpn.ac.lk`                      |                                     | | |

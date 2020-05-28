@@ -54,13 +54,13 @@ And:
 | `https://eduvpn1.eduvpn.de/`        | `https://eduvpn1.eduvpn.de/saml/login?ReturnTo=@RETURN_TO@&IdP=@ORG_ID@`             | `https://www.aai.dfn.de/fileadmin/metadata/dfn-aai-basic-metadata.xml` |
 | `https://eduvpn1.funet.fi/`         | `https://eduvpn1.funet.fi/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@` | `https://haka.funet.fi/metadata/haka-metadata.xml` |
 | `eduvpn.rash.al`                    | | |
-| `eduvpn.deic.dk`                    | | |
+| `eduvpn.deic.dk`                    | Hub/Proxy (`samlp:Scoping`) | `https://metadata.wayf.dk/birk-idp.xml` |
 | `eduvpn.eenet.ee`                   | Currently broken (mail sent) | |
 | `eduvpn-poc.renater.fr`             | | |
 | `eduvpn.marwan.ma`                  | Mail sent | |
 | `guest.eduvpn.no`                   | Mail sent (Feide) | |
 | `vpn.pern.edu.pk`                   | | |
 | `eduvpn.ac.lk`                      | | |
-| `eduvpn.renu.ac.ug`                 | | |
-| `eduvpn.uran.ua`                    | | |
+| `eduvpn.renu.ac.ug`                 | Skype message sent | |
+| `eduvpn.uran.ua`                    | Seems to have only 1 IdP? | |
 | `gdpt-eduvpndev1.tnd.aarnet.edu.au` | N/A | N/A |

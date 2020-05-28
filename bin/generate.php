@@ -15,6 +15,7 @@ $metadataMapping = [
     'https://eduvpn.deic.dk/' => ['https://metadata.wayf.dk/birk-idp.xml'],
     // https://wiki.eduuni.fi/display/CSCHAKA/Haka+metadata
     'https://eduvpn1.funet.fi/' => ['https://haka.funet.fi/metadata/haka-metadata.xml'],
+    'https://eduvpn.renu.ac.ug/' => ['https://rif.renu.ac.ug/rr/metadata/federation/RIF/IDP/metadata.xml'],
 ];
 
 $feideSpList = [

@@ -17,6 +17,8 @@ $metadataMapping = [
     'https://eduvpn1.funet.fi/' => ['https://haka.funet.fi/metadata/haka-metadata.xml'],
     'https://eduvpn.renu.ac.ug/' => ['https://rif.renu.ac.ug/rr/metadata/federation/RIF/IDP/metadata.xml'],
     'https://eduvpn.marwan.ma/' => ['https://www.eduidm.ma/metadata/eduidm.xml'],
+    'https://vpn.pern.edu.pk/' => ['https://rr.pern.edu.pk/rr3/signedmetadata/federation/PERN-Federation/metadata.xml'],
+    'https://eduvpn.ac.lk/' => ['https://fr.ac.lk/signedmetadata/metadata.xml'],
 ];
 
 $feideSpList = [

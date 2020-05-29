@@ -256,7 +256,7 @@ function rewriteSecureInternet($authTemplateMapping)
         $d = [
             'server_type' => 'secure_internet',
             'base_url' => $instance['base_uri'],
-            'display_name' => ccRewrite($instance['base_uri']),
+            'display_name' => ccRewrite($instance['base_uri']) . ' (DO NOT USE!)',
             'public_key_list' => $instance['public_key_list'],
             'country_code' => ccRewrite($instance['base_uri']),
         ];

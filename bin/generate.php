@@ -31,6 +31,27 @@ $authTemplateMapping = [
     'https://eduvpn.ac.lk/' => 'https://eduvpn.ac.lk/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@',
 ];
 
+function ccRewrite($baseUri) {
+    $ccMapping = [
+        'https://eduvpn.rash.al/' => 'AL',
+        'https://gdpt-eduvpndev1.tnd.aarnet.edu.au/' => 'AU',
+        'https://eduvpn.deic.dk/' => 'DK',
+        'https://eduvpn.eenet.ee/' => 'EE',
+        'https://eduvpn1.funet.fi/' => 'FI',
+        'https://eduvpn-poc.renater.fr/' => 'FR',
+        'https://eduvpn1.eduvpn.de/' => 'DE',
+        'https://eduvpn.marwan.ma/' => 'MA',
+        'https://guest.eduvpn.no/' => 'NO',
+        'https://vpn.pern.edu.pk/' => 'PK',
+        'https://eduvpn.ac.lk/' => 'LK',
+        'https://nl.eduvpn.org/' => 'NL',
+        'https://eduvpn.renu.ac.ug/' => 'UG',
+        'https://eduvpn.uran.ua/' => 'UA',
+    ];
+
+    return $ccMapping[$baseUri];
+}
+
 $feideSpList = [
     'https://guest.eduvpn.no/',
 ];
@@ -235,8 +256,9 @@ function rewriteSecureInternet($authTemplateMapping)
         $d = [
             'server_type' => 'secure_internet',
             'base_url' => $instance['base_uri'],
-            'display_name' => $instance['display_name'],
+            'display_name' => ccRewrite($instance['base_uri']),
             'public_key_list' => $instance['public_key_list'],
+            'country_code' => ccRewrite($instance['base_uri']),
         ];
         if (\array_key_exists('support_contact', $instance)) {
             $d['support_contact'] = $instance['support_contact'];

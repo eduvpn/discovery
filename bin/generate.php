@@ -21,6 +21,16 @@ $metadataMapping = [
     'https://eduvpn.ac.lk/' => ['https://fr.ac.lk/signedmetadata/metadata.xml'],
 ];
 
+$authTemplateMapping = [
+    'https://nl.eduvpn.org/' => 'https://nl.eduvpn.org/php-saml-sp/login?ReturnTo=@RETURN_TO@&IdP=@ORG_ID@',
+    'https://eduvpn1.eduvpn.de/' => 'https://eduvpn1.eduvpn.de/saml/login?ReturnTo=@RETURN_TO@&IdP=@ORG_ID@',
+    'https://eduvpn1.funet.fi/' => 'https://eduvpn1.funet.fi/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@',
+    'https://eduvpn.renu.ac.ug/' => 'https://eduvpn.renu.ac.ug/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@',
+    'https://eduvpn.marwan.ma/' => 'https://eduvpn.marwan.ma/saml/login?ReturnTo=@RETURN_TO@&IdP=@ORG_ID@',
+    'https://vpn.pern.edu.pk/' => 'https://vpn.pern.edu.pk/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@',
+    'https://eduvpn.ac.lk/' => 'https://eduvpn.ac.lk/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@',
+];
+
 $feideSpList = [
     'https://guest.eduvpn.no/',
 ];
@@ -36,7 +46,7 @@ $organizationServerList = getOrganizationServerList($mappingData);
 writeOrganizationList($organizationServerList);
 
 $serverList = [];
-$serverList = \array_merge($serverList, rewriteSecureInternet());
+$serverList = \array_merge($serverList, rewriteSecureInternet($authTemplateMapping));
 $serverList = \array_merge($serverList, rewriteInstituteAccess());
 \file_put_contents('out/server_list.json', \json_encode(['v' => getAtomDate(), 'server_list' => $serverList], JSON_UNESCAPED_SLASHES));
 
@@ -217,7 +227,7 @@ function getAtomDate()
     return $dateTime->format(DateTime::ATOM);
 }
 
-function rewriteSecureInternet()
+function rewriteSecureInternet($authTemplateMapping)
 {
     $jsonData = \json_decode(\file_get_contents('secure_internet.json'), true);
     $outputData = [];
@@ -230,6 +240,9 @@ function rewriteSecureInternet()
         ];
         if (\array_key_exists('support_contact', $instance)) {
             $d['support_contact'] = $instance['support_contact'];
+        }
+        if(array_key_exists($instance['base_uri'], $authTemplateMapping)) {
+            $d['authentication_url_template'] = $authTemplateMapping[$instance['base_uri']];
         }
         $outputData[] = $d;
     }

@@ -59,7 +59,7 @@ And:
 |        | `eduvpn1.eduvpn.de`                 | Mail sent (to confirm Metadata URL) | `https://eduvpn1.eduvpn.de/saml/login?ReturnTo=@RETURN_TO@&IdP=@ORG_ID@`              | `https://www.aai.dfn.de/fileadmin/metadata/dfn-aai-basic-metadata.xml` |
 |        | `eduvpn.rash.al`                    | 1 IdP with multiple organizations   | | |
 |        | `eduvpn.deic.dk`                    | Hub/Proxy (`samlp:Scoping`)         | _TBD_ | `https://metadata.wayf.dk/birk-idp.xml` |
-|        | `eduvpn.eenet.ee`                   | Currently broken (mail sent)        | | |
+|        | `eduvpn.eenet.ee`                   | Using SSP as proxy? Info requested  | | |
 |        | `eduvpn-poc.renater.fr`             | Seems to have only 1 IdP?           | | | 
 |        | `guest.eduvpn.no`                   | Mail sent (Feide)                   | | |
 |        | `eduvpn.uran.ua`                    | Seems to have only 1 IdP?           | | |

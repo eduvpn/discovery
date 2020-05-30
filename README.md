@@ -64,3 +64,55 @@ And:
 |        | `guest.eduvpn.no`                   | Mail sent (Feide)                   | | |
 |        | `eduvpn.uran.ua`                    | Seems to have only 1 IdP?           | | |
 |        | `gdpt-eduvpndev1.tnd.aarnet.edu.au` | U/P login only                      | _N/A_ | _N/A_ |
+
+# Open Issues
+
+With SAML proxies we somehow need to indicate which IdP is to be used. This can
+typically be done using `AuthnRequest` "scoping". The SP needs to support this
+through a query parameter.
+
+[Patch](https://github.com/fkooman/php-saml-sp/compare/proxy-scoping) for 
+[php-saml-sp](https://github.com/fkooman/php-saml-sp) is a work in progress.
+
+It _may_ work through clever `ReturnTo` (double) encoding.
+
+With Feide we need to be even more clever as `AuthnRequest` "scoping" may not 
+be supported (unconfirmed as of 2020-05-26). There we may not have any other 
+choice than be clever `ReturnTo` (double) encoding.
+
+# Triggering SAML Login through URL
+
+## Mellon
+
+[Documentation](https://github.com/latchset/mod_auth_mellon#manual-login)
+
+- `ReturnTo`
+- `IdP`
+
+URL format: `/saml/login?ReturnTo=X&IdP=Y`
+
+## Shibboleth
+
+[Documentation](https://wiki.shibboleth.net/confluence/display/SP3/SessionInitiator#SessionInitiator-InitiatorProtocol)
+
+- `target`
+- `entityID`
+
+URL format: `https://sp.example.org/Shibboleth.sso/Login?target=https%3A%2F%2Fsp.example.org%2Fresource.asp&entityID=https%3A%2F%2Fidp.example.org%2Fidp%2Fshibboleth`
+
+## simpleSAMLphp
+
+See [this](https://github.com/simplesamlphp/simplesamlphp/blob/master/modules/core/www/as_login.php). Seems `saml:idp` is not documented...
+
+- `ReturnTo`
+- `AuthId`
+- `saml:idp`
+
+URL format: `/simplesaml/module.php/core/as_login.php?AuthId=<authentication source>&ReturnTo=<return URL>`
+
+## php-saml-sp
+
+- `ReturnTo`
+- `IdP`
+
+URL format: `/php-saml-sp/login?ReturnTo=X&IdP=Y`

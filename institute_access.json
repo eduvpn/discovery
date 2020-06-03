@@ -81,6 +81,18 @@
             ]
         },
         {
+            "base_uri": "https://saxion.eduvpn.nl/",
+            "display_name": {
+                "nl": "Hogeschool Saxion",
+                "en": "Saxion University of Applied Sciences"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/saxion.png",
+            "support_contact": [
+                "tel:+31880193600",
+                "https://servicedesk.saxion.nl/"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn.ipb.pt/",
             "display_name": "Instituto Polit\u00e9cnico de Bragan\u00e7a",
             "logo": "https://static.eduvpn.nl/disco/img/ipb.png",
@@ -289,6 +301,6 @@
             ]
         }
     ],
-    "seq": 164,
-    "signed_at": "2020-05-27 15:15:33"
+    "seq": 165,
+    "signed_at": "2020-06-03 13:52:19"
 }

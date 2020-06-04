@@ -187,6 +187,18 @@
             ]
         },
         {
+            "base_uri": "https://tudelft.eduvpn.nl/",
+            "display_name": {
+                "nl": "Technische Universiteit Delft",
+                "en": "Delft University of Technology"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/tudelft.png",
+            "support_contact": [
+                "mailto:eduvpn@surfnet.nl",
+                "https://www.tudelft.nl/studenten/ict/servicepunt/"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn.hochschule-trier.de/",
             "display_name": {
                 "en": "Trier University of Applied Sciences",
@@ -301,6 +313,6 @@
             ]
         }
     ],
-    "seq": 165,
-    "signed_at": "2020-06-03 13:52:19"
+    "seq": 166,
+    "signed_at": "2020-06-04 08:25:55"
 }

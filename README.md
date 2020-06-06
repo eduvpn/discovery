@@ -57,7 +57,7 @@ And:
 | ✅️     | `vpn.pern.edu.pk`                   |                                     | `https://vpn.pern.edu.pk/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@`   | `https://rr.pern.edu.pk/rr3/signedmetadata/federation/PERN-Federation/metadata.xml` |
 | ✅️     | `eduvpn.ac.lk`                      |                                     | `https://eduvpn.ac.lk/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@`      | `https://fr.ac.lk/signedmetadata/metadata.xml` |
 |        | `eduvpn1.eduvpn.de`                 | Mail sent (to confirm Metadata URL) | `https://eduvpn1.eduvpn.de/saml/login?ReturnTo=@RETURN_TO@&IdP=@ORG_ID@`              | `https://www.aai.dfn.de/fileadmin/metadata/dfn-aai-basic-metadata.xml` |
-|        | `eduvpn.deic.dk`                    | Must switch to php-saml-sp first    | `https://eduvpn.deic.dk/php-saml-sp/login?ReturnTo=@RETURN_TO@&IdP=https://wayf.wayf.dk&ScopingIdpList=@ORG_ID@` | `https://metadata.wayf.dk/birk-idp.xml` |
+|        | `eduvpn.deic.dk`                    | Must switch to php-saml-sp first    | `https://eduvpn.deic.dk/php-saml-sp/login?ReturnTo=@RETURN_TO@&IdP=https://wayf.wayf.dk&ScopingIdpList=@ORG_ID@` | For Organization List: `https://metadata.wayf.dk/birk-idp.xml`, for SP: `https://metadata.wayf.dk/wayf-metadata.xml` |
 |        | `eduvpn.rash.al`                    | 1 IdP with multiple organizations   | | |
 |        | `eduvpn.eenet.ee`                   | Using SSP as proxy? Info requested  | | |
 |        | `eduvpn-poc.renater.fr`             | Seems to have only 1 IdP?           | | | 
@@ -71,10 +71,8 @@ With SAML proxies we somehow need to indicate which IdP is to be used. This can
 typically be done using `AuthnRequest` "scoping". The SP needs to support this
 through a query parameter.
 
-[Patch](https://github.com/fkooman/php-saml-sp/compare/proxy-scoping) for 
-[php-saml-sp](https://github.com/fkooman/php-saml-sp) is a work in progress.
-
-It _may_ work through clever `ReturnTo` (double) encoding.
+Support for this will be part of the next release of 
+[php-saml-sp](https://github.com/fkooman/php-saml-sp).
 
 With Feide we need to be even more clever as `AuthnRequest` "scoping" may not 
 be supported (unconfirmed as of 2020-05-26). There we may not have any other 
@@ -114,5 +112,6 @@ URL format: `/simplesaml/module.php/core/as_login.php?AuthId=<authentication sou
 
 - `ReturnTo`
 - `IdP`
+- `ScopingIdPList` (for `<samlp:Scoping>`)
 
 URL format: `/php-saml-sp/login?ReturnTo=X&IdP=Y`

@@ -58,8 +58,8 @@ And:
 | ✅️     | `eduvpn.ac.lk`                      |                                     | `https://eduvpn.ac.lk/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@`      | `https://fr.ac.lk/signedmetadata/metadata.xml` |
 |        | `eduvpn1.eduvpn.de`                 | Mail sent (to confirm Metadata URL) | `https://eduvpn1.eduvpn.de/saml/login?ReturnTo=@RETURN_TO@&IdP=@ORG_ID@`              | `https://www.aai.dfn.de/fileadmin/metadata/dfn-aai-basic-metadata.xml` |
 |        | `eduvpn.deic.dk`                    | Must switch to php-saml-sp first    | `https://eduvpn.deic.dk/php-saml-sp/login?ReturnTo=@RETURN_TO@&IdP=https://wayf.wayf.dk&ScopingIdpList=@ORG_ID@` | For Organization List: `https://metadata.wayf.dk/birk-idp.xml`, for SP: `https://metadata.wayf.dk/wayf-metadata.xml` |
+|        | `eduvpn.eenet.ee`                   | Hub & Spoke, must switch to php-saml-sp first... | | `https://taeva.taat.edu.ee/module.php/janus/exportentities.php?state=prodaccepted&mimetype=application%2Fsamlmetadata%2Bxml&external=null` |
 |        | `eduvpn.rash.al`                    | 1 IdP with multiple organizations   | | |
-|        | `eduvpn.eenet.ee`                   | Using SSP as proxy? Info requested  | | |
 |        | `eduvpn-poc.renater.fr`             | Seems to have only 1 IdP?           | | | 
 |        | `guest.eduvpn.no`                   | Mail sent (Feide)                   | | |
 |        | `eduvpn.uran.ua`                    | Seems to have only 1 IdP?           | | |

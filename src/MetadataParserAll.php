@@ -105,19 +105,28 @@ class MetadataParserAll
      */
     private function getDisplayName(DOMElement $domElement)
     {
-        $domNodeList = $this->xmlDocument->domXPath->query('md:Extensions/mdui:UIInfo/mdui:DisplayName', $domElement);
-        if (0 === $domNodeList->length) {
-            return null;
-        }
+        // search in each of these for the "DisplayName"
+        $displayNamePathList = [
+            'md:Extensions/mdui:UIInfo/mdui:DisplayName',
+            '../md:Organization/md:OrganizationDisplayName',
+            '../md:Organization/md:OrganizationName',
+        ];
 
-        $languageList = [];
-        foreach ($domNodeList as $domNode) {
-            if (null === $xmlLang = $domNode->getAttribute('xml:lang')) {
-                $xmlLang = 'en';
+        foreach($displayNamePathList as $displayNamePath) {
+            $domNodeList = $this->xmlDocument->domXPath->query($displayNamePath, $domElement);
+            if (0 !== $domNodeList->length) {
+                $languageList = [];
+                foreach ($domNodeList as $domNode) {
+                    if (null === $xmlLang = $domNode->getAttribute('xml:lang')) {
+                        $xmlLang = 'en';
+                    }
+                    $languageList[$xmlLang] = $domNode->textContent;
+                }
+
+                return $languageList;
             }
-            $languageList[$xmlLang] = $domNode->textContent;
         }
 
-        return $languageList;
+        return null;
     }
 }

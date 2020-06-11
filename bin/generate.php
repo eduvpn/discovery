@@ -19,6 +19,7 @@ $metadataMapping = [
     'https://eduvpn.marwan.ma/' => ['https://www.eduidm.ma/metadata/eduidm.xml'],
     'https://vpn.pern.edu.pk/' => ['https://rr.pern.edu.pk/rr3/signedmetadata/federation/PERN-Federation/metadata.xml'],
     'https://eduvpn.ac.lk/' => ['https://fr.ac.lk/signedmetadata/metadata.xml'],
+    'https://eduvpn.eenet.ee/' => ['https://taeva.taat.edu.ee/module.php/janus/exportentities.php?state=prodaccepted&mimetype=application%2Fsamlmetadata%2Bxml&external=null'],
 ];
 
 $authTemplateMapping = [

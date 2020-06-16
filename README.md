@@ -46,6 +46,16 @@ And:
     https://disco.eduvpn.org/organization_list.json
     https://disco.eduvpn.org/organization_list.json.minisig
 
+The web server adds the `Cache-Control: no-cache` header to make sure that 
+HTTP clients will cache, but always verify that they have the latest version 
+before using it:
+
+    <Directory "/var/www/html/web/disco.eduvpn.org">
+        <Files "*.json">
+            Header set Cache-Control "no-cache"
+        </Files>
+    </Directory>
+
 ### Secure Internet 
 
 | Status | Server                              | Notes                               | Authentication URL Template                                                           | Metadata URL |

@@ -48,10 +48,10 @@ And:
 
 The web server adds the `Cache-Control: no-cache` header to make sure that 
 HTTP clients will cache, but always verify that they have the latest version 
-before using it:
+of the JSON and minisig files before using them:
 
     <Directory "/var/www/html/web/disco.eduvpn.org">
-        <Files "*.json">
+        <Files "*.json*">
             Header set Cache-Control "no-cache"
         </Files>
     </Directory>

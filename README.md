@@ -51,9 +51,7 @@ HTTP clients will cache, but always verify that they have the latest version
 of the JSON and minisig files before using them:
 
     <Directory "/var/www/html/web/disco.eduvpn.org">
-        <Files "*.json*">
-            Header set Cache-Control "no-cache"
-        </Files>
+        Header set Cache-Control "no-cache"
     </Directory>
 
 ### Secure Internet 

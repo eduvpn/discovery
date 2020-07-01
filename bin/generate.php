@@ -20,6 +20,7 @@ $metadataMapping = [
     'https://vpn.pern.edu.pk/' => ['https://rr.pern.edu.pk/rr3/signedmetadata/federation/PERN-Federation/metadata.xml'],
     'https://eduvpn.ac.lk/' => ['https://fr.ac.lk/signedmetadata/metadata.xml'],
     'https://eduvpn.eenet.ee/' => ['https://taeva.taat.edu.ee/module.php/janus/exportentities.php?state=prodaccepted&mimetype=application%2Fsamlmetadata%2Bxml&external=null'],
+    'https://eduvpn-poc.renater.fr/' => ['https://metadata.federation.renater.fr/eduVPN-58b9d/preview/preview-renater-eduVPN-metadata.xml'],
 ];
 
 $authTemplateMapping = [
@@ -30,6 +31,7 @@ $authTemplateMapping = [
     'https://eduvpn.marwan.ma/' => 'https://eduvpn.marwan.ma/saml/login?ReturnTo=@RETURN_TO@&IdP=@ORG_ID@',
     'https://vpn.pern.edu.pk/' => 'https://vpn.pern.edu.pk/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@',
     'https://eduvpn.ac.lk/' => 'https://eduvpn.ac.lk/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@',
+    'https://eduvpn-poc.renater.fr/' => 'https://eduvpn-poc.renater.fr/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@',
 ];
 
 function ccRewrite($baseUri) {

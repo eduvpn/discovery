@@ -9,6 +9,8 @@ use VPN\Discovery\MetadataParserAll;
 @\mkdir(\dirname(__DIR__).'/cache', 0711, true);
 @\mkdir(\dirname(__DIR__).'/out', 0711, true);
 
+$unixTime = time();
+
 $metadataMapping = [
     'https://nl.eduvpn.org/' => ['https://metadata.surfconext.nl/sp/https%253A%252F%252Fnl.eduvpn.org%252Fsaml', 'https://eva-saml-idp.eduroam.nl/simplesamlphp/saml2/idp/metadata.php'],
     'https://eduvpn1.eduvpn.de/' => ['https://www.aai.dfn.de/fileadmin/metadata/dfn-aai-basic-metadata.xml'],
@@ -67,19 +69,19 @@ $organizationServerList = getOrganizationServerList($mappingData);
 
 // now remove the servers from the entries and put them in separate files
 // based on the "orgId"...
-writeOrganizationList($organizationServerList);
+writeOrganizationList($organizationServerList, $unixTime);
 
 $serverList = [];
 $serverList = \array_merge($serverList, rewriteSecureInternet($authTemplateMapping));
 $serverList = \array_merge($serverList, rewriteInstituteAccess());
-\file_put_contents('out/server_list.json', \json_encode(['v' => getAtomDate(), 'server_list' => $serverList], JSON_UNESCAPED_SLASHES));
+\file_put_contents('out/server_list.json', \json_encode(['v' => $unixTime, 'server_list' => $serverList], JSON_UNESCAPED_SLASHES));
 
-function writeOrganizationList(array $organizationServerList)
+function writeOrganizationList(array $organizationServerList, $unixTime)
 {
     // we only need to remove server_info_list from the entries
     foreach ($organizationServerList as $k => $v) {
     }
-    \file_put_contents('out/organization_list.json', \json_encode(['v' => getAtomDate(), 'organization_list' => $organizationServerList], JSON_UNESCAPED_SLASHES));
+    \file_put_contents('out/organization_list.json', \json_encode(['v' => $unixTime, 'organization_list' => $organizationServerList], JSON_UNESCAPED_SLASHES));
 }
 
 function getOrganizationServerList(array $mappingData)
@@ -230,25 +232,6 @@ function fetchFeideIdpList($feideSpUrl)
     }
 
     return $idpList;
-}
-
-function tplRender($templateName, array $templateVariables = [])
-{
-    \extract($templateVariables);
-    \ob_start();
-    include \dirname(__DIR__).'/tpl/'.$templateName.'.tpl.php';
-
-    return \ob_get_clean();
-}
-
-/**
- * @return string
- */
-function getAtomDate()
-{
-    $dateTime = new DateTime();
-
-    return $dateTime->format(DateTime::ATOM);
 }
 
 function rewriteSecureInternet($authTemplateMapping)

@@ -58,6 +58,16 @@
             "logo": "https://static.eduvpn.nl/disco/img/eur.png"
         },
         {
+            "base_uri": "https://fontys.eduvpn.nl/",
+            "display_name": "Fontys",
+            "logo": "https://static.eduvpn.nl/disco/img/fontys.png",
+            "support_contact": [
+                "https://fontys.nl/fontyshelpt/IT-ondersteuning.htm",
+                "tel:+31885077777",
+                "mailto:it-servicedesk@fontys.nl"
+            ]
+        },
+        {
             "base_uri": "https://prod-eduvpn01.geant.org/",
             "display_name": "G\u00c9ANT",
             "logo": "https://static.eduvpn.nl/disco/img/geant.png",
@@ -323,6 +333,6 @@
             ]
         }
     ],
-    "seq": 167,
-    "signed_at": "2020-08-09 20:48:10"
+    "seq": 168,
+    "signed_at": "2020-08-14 15:02:07"
 }

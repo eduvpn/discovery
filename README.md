@@ -19,7 +19,13 @@ discovery files in the meantime, you don't want to overwrite those!
 
     $ git pull
 
-To generate the (new) discovery files:
+To generate the (new) discovery files. These are generated from the 
+`secure_internet.json` and `institute_access.json` until such time we no longer 
+have to maintain the "old" discovery. Then we can directly modify 
+`server_list.json`. The `organization_list.json` is generated from the SAML 
+metadata fetched from the federations. This is cached in the `cache/` 
+directory. You probably need to delete those regularly in order to sync up with
+any added/removed IdPs.
 
     $ ./generate.sh
 
@@ -38,13 +44,13 @@ To upload:
 
 The files are uploaded to:
 
-    https://disco.eduvpn.org/server_list.json
-    https://disco.eduvpn.org/server_list.json.minisig
+    https://disco.eduvpn.org/v2/server_list.json
+    https://disco.eduvpn.org/v2/server_list.json.minisig
 
 And:
 
-    https://disco.eduvpn.org/organization_list.json
-    https://disco.eduvpn.org/organization_list.json.minisig
+    https://disco.eduvpn.org/v2/organization_list.json
+    https://disco.eduvpn.org/v2/organization_list.json.minisig
 
 The web server adds the `Cache-Control: no-cache` header to make sure that 
 HTTP clients will cache, but always verify that they have the latest version 

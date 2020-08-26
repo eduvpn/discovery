@@ -1,3 +1,5 @@
+# Server Discovery for eduVPN
+
 These files are used by the eduVPN applications to fascilitate VPN server 
 discovery.
 
@@ -60,7 +62,18 @@ of the JSON and minisig files before using them:
         Header set Cache-Control "no-cache"
     </Directory>
 
-### Secure Internet 
+# Public Keys
+
+The following public keys MUST be trusted:
+
+`fkooman@deic.dk`:
+
+	untrusted comment: minisign public key 19725C6AF525056D
+	RWRtBSX1alxyGX+Xn3LuZnWUT0w//B6EmTJvgaAxBMYzlQeI+jdrO6KF
+
+More will be added in the (near) future.
+
+# Secure Internet 
 
 | Status | Server                              | Notes                               | Authentication URL Template                                                           | Metadata URL |
 | ------ | ----------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------- | ------------ |
@@ -71,7 +84,7 @@ of the JSON and minisig files before using them:
 | ✅️     | `vpn.pern.edu.pk`                   |                                     | `https://vpn.pern.edu.pk/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@`   | `https://rr.pern.edu.pk/rr3/signedmetadata/federation/PERN-Federation/metadata.xml` |
 | ✅️     | `eduvpn.ac.lk`                      |                                     | `https://eduvpn.ac.lk/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@`      | `https://fr.ac.lk/signedmetadata/metadata.xml` |
 | ✅️     | `eduvpn-poc.renater.fr`             | | `https://eduvpn-poc.renater.fr/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@` | `https://metadata.federation.renater.fr/eduVPN-58b9d/preview/preview-renater-eduVPN-metadata.xml` | 
-|        | `eduvpn1.eduvpn.de`                 | Mail sent (to confirm Metadata URL) | `https://eduvpn1.eduvpn.de/saml/login?ReturnTo=@RETURN_TO@&IdP=@ORG_ID@`              | `https://www.aai.dfn.de/fileadmin/metadata/dfn-aai-basic-metadata.xml` |
+| ✅️     | `eduvpn1.eduvpn.de`                 |                                     | `https://eduvpn1.eduvpn.de/saml/login?ReturnTo=@RETURN_TO@&IdP=@ORG_ID@`              | `https://www.aai.dfn.de/fileadmin/metadata/dfn-aai-basic-metadata.xml` |
 |        | `eduvpn.deic.dk`                    | Must switch to php-saml-sp first    | `https://eduvpn.deic.dk/php-saml-sp/login?ReturnTo=@RETURN_TO@&IdP=https://wayf.wayf.dk&ScopingIdpList=@ORG_ID@` | For Organization List: `https://metadata.wayf.dk/birk-idp.xml`, for SP: `https://metadata.wayf.dk/wayf-metadata.xml` |
 |        | `eduvpn.eenet.ee`                   | Hub & Spoke, must switch to php-saml-sp first... | | `https://taeva.taat.edu.ee/module.php/janus/exportentities.php?state=prodaccepted&mimetype=application%2Fsamlmetadata%2Bxml&external=null` |
 |        | `eduvpn.rash.al`                    | 1 IdP with multiple organizations   | | |

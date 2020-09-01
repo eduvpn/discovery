@@ -63,6 +63,16 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.frederick.ac.cy/",
+            "display_name": "Frederick University",
+            "logo": "https://static.eduvpn.nl/disco/img/frederick.png",
+            "support_contact": [
+                "mailto:support@frederick.ac.cy",
+                "tel:+35722394444",
+                "http://support.frederick.ac.cy"
+            ]
+        },
+        {
             "base_uri": "https://prod-eduvpn01.geant.org/",
             "display_name": "G\u00c9ANT",
             "logo": "https://static.eduvpn.nl/disco/img/geant.png",
@@ -328,6 +338,6 @@
             ]
         }
     ],
-    "seq": 169,
-    "signed_at": "2020-08-25 10:58:34"
+    "seq": 170,
+    "signed_at": "2020-09-01 08:50:36"
 }

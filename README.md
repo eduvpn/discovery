@@ -71,6 +71,10 @@ The following public keys MUST be trusted:
 	untrusted comment: minisign public key 19725C6AF525056D
 	RWRtBSX1alxyGX+Xn3LuZnWUT0w//B6EmTJvgaAxBMYzlQeI+jdrO6KF
 
+`jornane@uninett.no`:
+
+	RWQ68Y5/b8DED0TJ41B1LE7yAvkmavZWjDwCBUuC+Z2pP9HaSawzpEDA
+
 More will be added in the (near) future.
 
 # Secure Internet 

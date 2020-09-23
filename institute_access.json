@@ -108,6 +108,15 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.idi.co.ug/",
+            "display_name": "Infectious Diseases Institute - Uganda",
+            "logo": "https://static.eduvpn.nl/disco/img/idi.png",
+            "support_contact": [
+                "mailto:eduvpnsupport@idi.co.ug",
+                "tel:+256783670727"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn.ipb.pt/",
             "display_name": "Instituto Polit\u00e9cnico de Bragan\u00e7a",
             "logo": "https://static.eduvpn.nl/disco/img/ipb.png",
@@ -338,6 +347,6 @@
             ]
         }
     ],
-    "seq": 170,
-    "signed_at": "2020-09-01 08:50:36"
+    "seq": 171,
+    "signed_at": "2020-09-23 15:21:28"
 }

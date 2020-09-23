@@ -109,7 +109,7 @@
         },
         {
             "base_uri": "https://eduvpn.idi.co.ug/",
-            "display_name": "Infectious Diseases Institute - Uganda",
+            "display_name": "IDI-Uganda",
             "logo": "https://static.eduvpn.nl/disco/img/idi.png",
             "support_contact": [
                 "mailto:eduvpnsupport@idi.co.ug",
@@ -347,6 +347,6 @@
             ]
         }
     ],
-    "seq": 171,
-    "signed_at": "2020-09-23 15:21:28"
+    "seq": 172,
+    "signed_at": "2020-09-23 15:35:45"
 }

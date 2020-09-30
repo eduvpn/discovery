@@ -127,6 +127,14 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.karelia.fi/",
+            "display_name": "Karelia-ammattikorkeakoulu",
+            "logo": "https://static.eduvpn.nl/disco/img/karelia.png",
+            "support_contact": [
+                "mailto: helpdesk@karelia.fi"
+            ]
+        },
+        {
             "base_uri": "https://controller.eduroam.ke/",
             "display_name": "KENET",
             "logo": "https://static.eduvpn.nl/disco/img/kenet.png",
@@ -347,6 +355,6 @@
             ]
         }
     ],
-    "seq": 172,
-    "signed_at": "2020-09-23 15:35:45"
+    "seq": 173,
+    "signed_at": "2020-09-30 15:05:55"
 }

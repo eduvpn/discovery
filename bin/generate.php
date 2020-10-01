@@ -11,6 +11,12 @@ use VPN\Discovery\MetadataParserAll;
 
 $unixTime = time();
 
+$keywordMapping = [
+    'https://hku.eduvpn.nl/' => [
+        'en' => 'hku',
+    ]
+];
+
 $metadataMapping = [
     'https://nl.eduvpn.org/' => ['https://metadata.surfconext.nl/sp/https%253A%252F%252Fnl.eduvpn.org%252Fsaml', 'https://eva-saml-idp.eduroam.nl/simplesamlphp/saml2/idp/metadata.php'],
     'https://eduvpn1.eduvpn.de/' => ['https://www.aai.dfn.de/fileadmin/metadata/dfn-aai-basic-metadata.xml'],
@@ -73,7 +79,7 @@ writeOrganizationList($organizationServerList, $unixTime);
 
 $serverList = [];
 $serverList = \array_merge($serverList, rewriteSecureInternet($authTemplateMapping));
-$serverList = \array_merge($serverList, rewriteInstituteAccess());
+$serverList = \array_merge($serverList, rewriteInstituteAccess($keywordMapping));
 \file_put_contents('out/server_list.json', \json_encode(['v' => $unixTime, 'server_list' => $serverList], JSON_UNESCAPED_SLASHES));
 
 function writeOrganizationList(array $organizationServerList, $unixTime)
@@ -257,7 +263,7 @@ function rewriteSecureInternet($authTemplateMapping)
     return $outputData;
 }
 
-function rewriteInstituteAccess()
+function rewriteInstituteAccess(array $keywordMapping)
 {
     $jsonData = \json_decode(\file_get_contents('institute_access.json'), true);
     $outputData = [];
@@ -269,6 +275,9 @@ function rewriteInstituteAccess()
         ];
         if (\array_key_exists('support_contact', $instance)) {
             $d['support_contact'] = $instance['support_contact'];
+        }
+        if(array_key_exists($instance['base_uri'], $keywordMapping)) {
+            $d['keyword_list'] = $keywordMapping[$instance['base_uri']];
         }
         $outputData[] = $d;
     }

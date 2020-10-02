@@ -12,9 +12,7 @@ use VPN\Discovery\MetadataParserAll;
 $unixTime = time();
 
 $keywordMapping = [
-    'https://hku.eduvpn.nl/' => [
-        'en' => 'hku',
-    ]
+    'https://hku.eduvpn.nl/' => 'hku',
 ];
 
 $metadataMapping = [

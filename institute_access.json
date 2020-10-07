@@ -249,6 +249,14 @@
             "logo": "https://static.eduvpn.nl/disco/img/trimbos.png"
         },
         {
+            "base_uri": "https://eduvpn.turkuamk.fi/",
+            "display_name": "Turku University of Applied Sciences",
+            "logo": "https://static.eduvpn.nl/disco/img/turkuamk.png",
+            "support_contact": [
+                "mailto: servicedesk@turkuamk.fi"
+            ]
+        },
+        {
             "base_uri": "https://uninett.eduvpn.no/",
             "display_name": "Uninett",
             "logo": "https://static.eduvpn.nl/disco/img/uninett.png",
@@ -355,6 +363,6 @@
             ]
         }
     ],
-    "seq": 173,
-    "signed_at": "2020-09-30 15:05:55"
+    "seq": 174,
+    "signed_at": "2020-10-07 10:08:04"
 }

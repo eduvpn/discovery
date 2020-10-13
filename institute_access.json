@@ -122,7 +122,7 @@
                 "nl": "Hogeschool van Amsterdam",
                 "en": "Amsterdam University of Applied Sciences"
             },
-            "logo": "https://static.eduvpn.nl/disco/img/transparent.png",
+            "logo": "https://static.eduvpn.nl/disco/img/hva.png",
             "support_contact": [
                 "mailto:servicedesk-icts@hva.nl",
                 "tel:+31205951402",
@@ -310,7 +310,7 @@
                 "nl": "Universiteit van Amsterdam",
                 "en": "University of Amsterdam"
             },
-            "logo": "https://static.eduvpn.nl/disco/img/transparent.png",
+            "logo": "https://static.eduvpn.nl/disco/img/uva.png",
             "support_contact": [
                 "mailto:servicedesk-icts@uva.nl",
                 "https://extranet.uva.nl/contact/ict-services.html",
@@ -406,6 +406,6 @@
             ]
         }
     ],
-    "seq": 176,
-    "signed_at": "2020-10-13 09:19:39"
+    "seq": 177,
+    "signed_at": "2020-10-13 09:53:18"
 }

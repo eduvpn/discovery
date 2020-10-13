@@ -2,6 +2,15 @@
     "authorization_type": "local",
     "instances": [
         {
+            "base_uri": "https://avans.eduvpn.nl/",
+            "display_name": "Avans Hogeschool",
+            "logo": "https://static.eduvpn.nl/disco/img/avans.png",
+            "support_contact": [
+                "mailto:servicepunt@avans.nl",
+                "https://servicepunt.avans.nl"
+            ]
+        },
+        {
             "base_uri": "https://sunset.nuonet.fr/",
             "display_name": "CNOUS",
             "logo": "https://static.eduvpn.nl/disco/img/crous.png",
@@ -105,6 +114,19 @@
             "support_contact": [
                 "tel:+31880193600",
                 "https://servicedesk.saxion.nl/"
+            ]
+        },
+        {
+            "base_uri": "https://hva.eduvpn.nl/",
+            "display_name": {
+                "nl": "Hogeschool van Amsterdam",
+                "en": "Amsterdam University of Applied Sciences"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/transparent.png",
+            "support_contact": [
+                "mailto:servicedesk-icts@hva.nl",
+                "tel:+31205951402",
+                "https://www.hva.nl/over-de-hva/organisatie/diensten/centrale-diensten.html#anker-ict-services"
             ]
         },
         {
@@ -283,6 +305,19 @@
             ]
         },
         {
+            "base_uri": "https://uva.eduvpn.nl/",
+            "display_name": {
+                "nl": "Universiteit van Amsterdam",
+                "en": "University of Amsterdam"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/transparent.png",
+            "support_contact": [
+                "mailto:servicedesk-icts@uva.nl",
+                "https://extranet.uva.nl/contact/ict-services.html",
+                "tel:+31205251402"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn.uminho.pt/",
             "display_name": {
                 "en-US": "University of Minho",
@@ -371,6 +406,6 @@
             ]
         }
     ],
-    "seq": 175,
-    "signed_at": "2020-10-08 12:52:29"
+    "seq": 176,
+    "signed_at": "2020-10-13 09:19:39"
 }

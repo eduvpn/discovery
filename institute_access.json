@@ -82,6 +82,15 @@
             ]
         },
         {
+            "base_uri": "https://leduvpn.kyabirwasc.org/",
+            "display_name": "Global Surgical Initiatives, Jinja",
+            "logo": "https://static.eduvpn.nl/disco/img/gsi.png",
+            "support_contact": [
+                "mailto:ivan.aine@kyabirwasc.org",
+                "tel:+256779609632"
+            ]
+        },
+        {
             "base_uri": "https://prod-eduvpn01.geant.org/",
             "display_name": "G\u00c9ANT",
             "logo": "https://static.eduvpn.nl/disco/img/geant.png",
@@ -406,6 +415,6 @@
             ]
         }
     ],
-    "seq": 177,
-    "signed_at": "2020-10-13 09:53:18"
+    "seq": 178,
+    "signed_at": "2020-10-21 16:00:26"
 }

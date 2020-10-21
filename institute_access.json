@@ -158,6 +158,15 @@
             ]
         },
         {
+            "base_uri": "https://vpn.jcrc.org.ug/",
+            "display_name": "JCRC - Uganda",
+            "logo": "https://static.eduvpn.nl/disco/img/jcrc.png",
+            "support_contact": [
+                "mailto:aatukunda@jcrc.org.ug",
+                "tel:+256789711148"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn.karelia.fi/",
             "display_name": "Karelia-ammattikorkeakoulu",
             "logo": "https://static.eduvpn.nl/disco/img/karelia.png",
@@ -415,6 +424,6 @@
             ]
         }
     ],
-    "seq": 178,
-    "signed_at": "2020-10-21 16:00:26"
+    "seq": 179,
+    "signed_at": "2020-10-21 19:58:47"
 }

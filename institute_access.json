@@ -139,6 +139,15 @@
             ]
         },
         {
+            "base_uri": "https://vpn.ibgc.cnrs.fr/",
+            "display_name": "IBGC",
+            "logo": "https://static.eduvpn.nl/disco/img/ibgc.png",
+            "support_contact": [
+                "https://www.ibgc.cnrs.fr/glpi/",
+                "mailto:informatique@ibgc.cnrs.fr"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn.idi.co.ug/",
             "display_name": "IDI-Uganda",
             "logo": "https://static.eduvpn.nl/disco/img/idi.png",
@@ -424,6 +433,6 @@
             ]
         }
     ],
-    "seq": 179,
-    "signed_at": "2020-10-21 19:58:47"
+    "seq": 180,
+    "signed_at": "2020-10-22 09:42:51"
 }

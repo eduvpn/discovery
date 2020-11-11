@@ -166,6 +166,17 @@
             ]
         },
         {
+            "base_uri": "https://guest.eduvpn.ac.za/",
+            "display_name": "South Africa",
+            "logo": "https://static.eduvpn.nl/disco/img/za.png",
+            "public_key_list": [
+                "juqJG81DBCpGwwK999FjSDqSUJ_Zw7mpVdR5Fhsa1RI"
+            ],
+            "support_contact": [
+                "https://www.tenet.ac.za/services/eduvpn"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn.ac.lk/",
             "display_name": {
                 "en-US": "Sri Lanka",
@@ -230,6 +241,6 @@
             ]
         }
     ],
-    "seq": 167,
-    "signed_at": "2020-11-04 10:16:13"
+    "seq": 168,
+    "signed_at": "2020-11-11 12:08:42"
 }

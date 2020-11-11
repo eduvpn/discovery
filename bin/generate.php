@@ -28,6 +28,7 @@ $metadataMapping = [
     'https://eduvpn.eenet.ee/' => ['https://taeva.taat.edu.ee/module.php/janus/exportentities.php?state=prodaccepted&mimetype=application%2Fsamlmetadata%2Bxml&external=null'],
     'https://eduvpn-poc.renater.fr/' => ['https://metadata.federation.renater.fr/eduVPN-58b9d/preview/preview-renater-eduVPN-metadata.xml'],
     'https://eduvpn.myren.net.my/' => ['https://sifulan.my/metadata/metadata.xml'],
+    'https://guest.eduvpn.ac.za/' => ['https://metadata.safire.ac.za/safire-idp-proxy-metadata.xml'],
 ];
 
 $authTemplateMapping = [
@@ -40,6 +41,7 @@ $authTemplateMapping = [
     'https://eduvpn.ac.lk/' => 'https://eduvpn.ac.lk/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@',
     'https://eduvpn-poc.renater.fr/' => 'https://eduvpn-poc.renater.fr/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@',
     'https://eduvpn.myren.net.my/' => 'https://eduvpn.myren.net.my/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@',
+    'https://guest.eduvpn.ac.za/' => 'https://guest.eduvpn.ac.za/Shibboleth.sso/Login?entityID=@ORG_ID@&target=@RETURN_TO@',
 ];
 
 function ccRewrite($baseUri) {
@@ -59,6 +61,7 @@ function ccRewrite($baseUri) {
         'https://eduvpn.renu.ac.ug/' => 'UG',
         'https://eduvpn.uran.ua/' => 'UA',
         'https://eduvpn.myren.net.my/' => 'MY',
+        'https://guest.eduvpn.ac.za/' => 'ZA',
     ];
 
     return $ccMapping[$baseUri];

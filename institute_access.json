@@ -389,6 +389,15 @@
             "logo": "https://static.eduvpn.nl/disco/img/utwente.png"
         },
         {
+            "base_uri": "https://eduvpn.univ-reims.fr/",
+            "display_name": "Universit\u00e9 de Reims Champagne-Ardenne",
+            "logo": "https://static.eduvpn.nl/disco/img/urca.png",
+            "support_contact": [
+                "https://helpdesk.univ-reims.fr/",
+                "mailto:support-eduvpn@univ-reims.fr"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn.univ-rennes1.fr/",
             "display_name": "Universit\u00e9 de Rennes 1",
             "logo": "https://static.eduvpn.nl/disco/img/ur1.png",
@@ -433,6 +442,6 @@
             ]
         }
     ],
-    "seq": 180,
-    "signed_at": "2020-10-22 09:42:51"
+    "seq": 183,
+    "signed_at": "2020-11-13 08:50:50"
 }

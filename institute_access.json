@@ -82,6 +82,19 @@
             ]
         },
         {
+            "base_uri": "https://vpn.tuiasi.ro/",
+            "display_name": {
+                "en": "Gheorghe Asachi Technical University of Iasi",
+                "ro": "Gheorghe Asachi Technical University of Iasi"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/tuiasi.png",
+            "support_contact": [
+                "mailto:eduvpn_support@tuiasi.ro",
+                "tel:+40232701340",
+                "https://support.tuiasi.ro"
+            ]
+        },
+        {
             "base_uri": "https://leduvpn.kyabirwasc.org/",
             "display_name": "Global Surgical Initiatives, Jinja",
             "logo": "https://static.eduvpn.nl/disco/img/gsi.png",
@@ -442,6 +455,6 @@
             ]
         }
     ],
-    "seq": 183,
-    "signed_at": "2020-11-13 08:50:50"
+    "seq": 184,
+    "signed_at": "2020-11-19 08:41:42"
 }

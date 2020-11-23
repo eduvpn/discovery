@@ -444,6 +444,18 @@
             ]
         },
         {
+            "base_uri": "https://zuyd.eduvpn.nl/",
+            "display_name": {
+                "nl": "Zuyd Hogeschool",
+                "en": "Zuyd University"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/zuyd.png",
+            "support_contact": [
+                "mailto:ict-servicedesk@zuyd.nl",
+                "tel:+31454006085"
+            ]
+        },
+        {
             "base_uri": "https://hiof.eduvpn.no/",
             "display_name": {
                 "en": "\u00d8stfold University College",
@@ -455,6 +467,6 @@
             ]
         }
     ],
-    "seq": 184,
-    "signed_at": "2020-11-19 08:41:42"
+    "seq": 185,
+    "signed_at": "2020-11-23 18:09:16"
 }

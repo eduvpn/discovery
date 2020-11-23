@@ -27,6 +27,18 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.du.se/",
+            "display_name": {
+                "en": "Dalarna University",
+                "sv": "H\u00f6gskolan Dalarna"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/duse.png",
+            "support_contact": [
+                "mailto:support@du.se",
+                "tel:+4623778888"
+            ]
+        },
+        {
             "base_uri": "https://demo.eduvpn.nl/",
             "display_name": "Demo",
             "logo": "https://static.eduvpn.nl/disco/img/demo.png",
@@ -467,6 +479,6 @@
             ]
         }
     ],
-    "seq": 185,
-    "signed_at": "2020-11-23 18:09:16"
+    "seq": 186,
+    "signed_at": "2020-11-23 18:13:46"
 }

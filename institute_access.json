@@ -19,6 +19,14 @@
             ]
         },
         {
+            "base_uri": "https://vpn.cnrst.ma/",
+            "display_name": "CNRST",
+            "logo": "https://static.eduvpn.nl/disco/img/cnrst.png",
+            "support_contact": [
+                "mailto: noc@cnrst.ma"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn-csc.funet.fi/",
             "display_name": "CSC - IT Center for Science Ltd.",
             "logo": "https://static.eduvpn.nl/disco/img/csc.png",
@@ -215,6 +223,15 @@
             "support_contact": [
                 "mailto:eduvpn@kenet.or.ke",
                 "tel:+254732150500"
+            ]
+        },
+        {
+            "base_uri": "https://vpn.marwan.ma/",
+            "display_name": "MARWAN",
+            "logo": "https://static.eduvpn.nl/disco/img/marwan.png",
+            "support_contact": [
+                "tel:+212700062200",
+                "mailto:noc@marwan.ma"
             ]
         },
         {
@@ -479,6 +496,6 @@
             ]
         }
     ],
-    "seq": 186,
-    "signed_at": "2020-11-23 18:13:46"
+    "seq": 189,
+    "signed_at": "2020-12-09 11:48:39"
 }

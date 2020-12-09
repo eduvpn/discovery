@@ -19,6 +19,14 @@
             ]
         },
         {
+            "base_uri": "https://vpn.cnrst.ma/",
+            "display_name": "CNRST",
+            "logo": "https://static.eduvpn.nl/disco/img/cnrst.png",
+            "support_contact": [
+                "mailto: noc@cnrst.ma"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn-csc.funet.fi/",
             "display_name": "CSC - IT Center for Science Ltd.",
             "logo": "https://static.eduvpn.nl/disco/img/csc.png",
@@ -488,6 +496,6 @@
             ]
         }
     ],
-    "seq": 187,
-    "signed_at": "2020-12-09 11:46:14"
+    "seq": 189,
+    "signed_at": "2020-12-09 11:48:39"
 }

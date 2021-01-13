@@ -66,7 +66,6 @@
         {
             "base_uri": "https://khio.eduvpn.no/",
             "display_name": {
-                "en": "eduVPN for Oslo National Academy of the Arts",
                 "nb": "eduVPN for Kunsth\u00f8gskolen"
             },
             "logo": "https://static.eduvpn.nl/disco/img/khio.png",
@@ -77,7 +76,6 @@
         {
             "base_uri": "https://samas.eduvpn.no/",
             "display_name": {
-                "en": "eduVPN for S\u00e1mi University of Applied Sciences",
                 "nb": "eduVPN for S\u00e1mi allaskuvla"
             },
             "logo": "https://static.eduvpn.nl/disco/img/khio.png",
@@ -192,6 +190,16 @@
                 "mailto:servicedesk-icts@hva.nl",
                 "tel:+31205951402",
                 "https://www.hva.nl/over-de-hva/organisatie/diensten/centrale-diensten.html#anker-ict-services"
+            ]
+        },
+        {
+            "base_uri": "https://hiof.eduvpn.no/",
+            "display_name": {
+                "nb": "H\u00f8gskolen i \u00d8stfold"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/hiof.png",
+            "support_contact": [
+                "mailto:kontakt@uninett.no"
             ]
         },
         {
@@ -505,17 +513,6 @@
             "support_contact": [
                 "mailto:ict-servicedesk@zuyd.nl",
                 "tel:+31454006085"
-            ]
-        },
-        {
-            "base_uri": "https://hiof.eduvpn.no/",
-            "display_name": {
-                "en": "\u00d8stfold University College",
-                "nb": "H\u00f8gskolen i \u00d8stfold"
-            },
-            "logo": "https://static.eduvpn.nl/disco/img/hiof.png",
-            "support_contact": [
-                "mailto:kontakt@uninett.no"
             ]
         }
     ],

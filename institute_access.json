@@ -64,6 +64,28 @@
             ]
         },
         {
+            "base_uri": "https://khio.eduvpn.no/",
+            "display_name": {
+                "en": "eduVPN for Oslo National Academy of the Arts",
+                "nb": "eduVPN for Kunsth\u00f8gskolen"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/khio.png",
+            "support_contact": [
+                "mailto:kontakt@uninett.no"
+            ]
+        },
+        {
+            "base_uri": "https://samas.eduvpn.no/",
+            "display_name": {
+                "en": "eduVPN for S\u00e1mi University of Applied Sciences",
+                "nb": "eduVPN for S\u00e1mi allaskuvla"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/khio.png",
+            "support_contact": [
+                "mailto:kontakt@uninett.no"
+            ]
+        },
+        {
             "base_uri": "https://egi.eduvpn.nl/",
             "display_name": "EGI Foundation",
             "logo": "https://static.eduvpn.nl/disco/img/egi.png"
@@ -497,6 +519,6 @@
             ]
         }
     ],
-    "seq": 189,
-    "signed_at": "2020-12-09 11:48:39"
+    "seq": 190,
+    "signed_at": "2021-01-13 11:27:28"
 }

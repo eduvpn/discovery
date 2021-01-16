@@ -479,6 +479,11 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.uphf.fr/",
+            "display_name": "Universit\u00e9 Polytechnique Hauts-de-France",
+            "logo": "https://static.eduvpn.nl/disco/img/uphf.png"
+        },
+        {
             "base_uri": "https://hku.eduvpn.nl/",
             "display_name": {
                 "en-US": "Utrecht School of the Arts",
@@ -516,6 +521,6 @@
             ]
         }
     ],
-    "seq": 192,
-    "signed_at": "2021-01-13 16:34:38"
+    "seq": 193,
+    "signed_at": "2021-01-16 00:02:06"
 }

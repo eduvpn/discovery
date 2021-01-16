@@ -481,7 +481,11 @@
         {
             "base_uri": "https://eduvpn.uphf.fr/",
             "display_name": "Universit\u00e9 Polytechnique Hauts-de-France",
-            "logo": "https://static.eduvpn.nl/disco/img/uphf.png"
+            "logo": "https://static.eduvpn.nl/disco/img/uphf.png",
+            "support_contact": [
+                "mailto:vpn@uphf.fr",
+                "https://portail.uphf.fr"
+            ]
         },
         {
             "base_uri": "https://hku.eduvpn.nl/",
@@ -521,6 +525,6 @@
             ]
         }
     ],
-    "seq": 193,
-    "signed_at": "2021-01-16 00:02:06"
+    "seq": 194,
+    "signed_at": "2021-01-16 09:11:30"
 }

@@ -266,6 +266,16 @@
             "logo": "https://static.eduvpn.nl/disco/img/nikhef.png"
         },
         {
+            "base_uri": "https://nla.eduvpn.no/",
+            "display_name": {
+                "nb": "NLA H\u00f8gskolen"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/nla.png",
+            "support_contact": [
+                "mailto:kontakt@uninett.no"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn.hec.gov.pk/",
             "display_name": "Pakistan Education & Research Network",
             "logo": "https://static.eduvpn.nl/disco/img/pern.png",
@@ -525,6 +535,6 @@
             ]
         }
     ],
-    "seq": 194,
-    "signed_at": "2021-01-16 09:11:30"
+    "seq": 195,
+    "signed_at": "2021-01-29 15:27:56"
 }

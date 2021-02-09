@@ -1,6 +1,6 @@
-# Server Discovery for eduVPN
+# App Server Discovery
 
-These files are used by the eduVPN applications to facilitate VPN server 
+These files are used by the native eduVPN applications to facilitate VPN server 
 discovery on the `disco.eduvpn.org` domain.
 
 The JSON files are signed using 
@@ -11,22 +11,31 @@ To fetch the repository:
     $ git clone git@git.sr.ht:~eduvpn/discovery
     $ cd discovery
 
-To generate a (new) key:
-
-    $ minisign -G -p disco.pub -s disco.key
-
 Make sure you are on the latest commit in case someone else updated the 
 discovery files in the meantime, you don't want to overwrite those!
 
     $ git pull
 
 Modify `server_list.json` to add/remove servers. Look at the other entries on
-how to do this exactly. More documentation will be added in the near future.
+how to do this exactly.
 
-The `organization_list.json` file is generated from the SAML metadata fetched 
-from the URLs mentioned in the `server_list.json`. These files are cached in 
-the `cache/` directory. You probably need to delete those regularly in order 
-to sync up with any added/removed IdPs.
+The `out/organization_list.json` file is automatically generated. This file is 
+used by the `server_internet` server ONLY! You can specify the metadata URLs 
+the SP is linked to in `_metadata_url_list` (as an array). A special case is 
+`_is_feide_sp` which is set to `true` for `guest.eduvpn.no` only. In this case
+the WAYF's HTML is scraped.
+
+SAML metadata files (and the Feide WAYF HTML) is cached in the `cache/` folder.
+You probably want to delete those regularly in order to sync up with any 
+added/removed IdPs in the metadata. 
+
+There is no signature verification of the SAML metadata as of this moment, this 
+is something that should probably be implemented at some point. This attack 
+requires compromising the `_metadata_url_list` locations, typically hosted at 
+an NREN. The risk is limited though as the metadata information is only used as 
+a "hint" for the SP, it can't be used to bypass anything.
+
+# Discovery File Generation
 
     $ ./generate.sh
 
@@ -53,17 +62,9 @@ And:
     https://disco.eduvpn.org/v2/organization_list.json
     https://disco.eduvpn.org/v2/organization_list.json.minisig
 
-The web server adds the `Cache-Control: no-cache` header to make sure that 
-HTTP clients will cache, but always verify that they have the latest version 
-of the JSON and minisig files before using them:
-
-    <Directory "/var/www/html/web/disco.eduvpn.org">
-        Header set Cache-Control "no-cache"
-    </Directory>
-
 # Public Keys
 
-The following public keys MUST be trusted:
+The following public keys MUST be trusted by the eduVPN applications:
 
 | Owner                | Public Key                                                 |
 | -------------------- | ---------------------------------------------------------- |
@@ -142,3 +143,18 @@ URL format: `/simplesaml/module.php/core/as_login.php?AuthId=<authentication sou
 - `ScopingIdPList` (for `<samlp:Scoping>`)
 
 URL format: `/php-saml-sp/login?ReturnTo=X&IdP=Y`
+
+# Web Server
+
+The web server adds the `Cache-Control: no-cache` header to make sure that 
+HTTP clients will cache, but always verify that they have the latest version 
+of the JSON and minisig files before using them:
+
+    <Directory "/var/www/html/web/disco.eduvpn.org">
+        Header set Cache-Control "no-cache"
+    </Directory>
+    
+# Generate Minisign Key
+
+    $ minisign -G -p disco.pub -s disco.key
+

@@ -1,16 +1,15 @@
 # Server Discovery for eduVPN
 
-These files are used by the eduVPN applications to fascilitate VPN server 
-discovery.
+These files are used by the eduVPN applications to facilitate VPN server 
+discovery on the `disco.eduvpn.org` domain.
 
 The JSON files are signed using 
 [minisign](https://jedisct1.github.io/minisign/).
 
 To fetch the repository:
 
-    $ git clone git@github.com:eduvpn/discovery.git
+    $ git clone git@git.sr.ht:~eduvpn/discovery
     $ cd discovery
-    $ git checkout new-disco
 
 To generate a (new) key:
 
@@ -21,13 +20,13 @@ discovery files in the meantime, you don't want to overwrite those!
 
     $ git pull
 
-To generate the (new) discovery files. These are generated from the 
-`secure_internet.json` and `institute_access.json` until such time we no longer 
-have to maintain the "old" discovery. Then we can directly modify 
-`server_list.json`. The `organization_list.json` is generated from the SAML 
-metadata fetched from the federations. This is cached in the `cache/` 
-directory. You probably need to delete those regularly in order to sync up with
-any added/removed IdPs.
+Modify `server_list.json` to add/remove servers. Look at the other entries on
+how to do this exactly. More documentation will be added in the near future.
+
+The `organization_list.json` file is generated from the SAML metadata fetched 
+from the URLs mentioned in the `server_list.json`. These files are cached in 
+the `cache/` directory. You probably need to delete those regularly in order 
+to sync up with any added/removed IdPs.
 
     $ ./generate.sh
 
@@ -100,7 +99,7 @@ typically be done using `AuthnRequest` "scoping". The SP needs to support this
 through a query parameter.
 
 Support for this will be part of the next release of 
-[php-saml-sp](https://github.com/fkooman/php-saml-sp).
+[php-saml-sp](https://sr.ht/~fkooman/php-saml-sp).
 
 With Feide we need to be even more clever as `AuthnRequest` "scoping" may not 
 be supported (unconfirmed as of 2020-05-26). There we may not have any other 

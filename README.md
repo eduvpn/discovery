@@ -20,14 +20,14 @@ Modify `server_list.json` to add/remove servers. Look at the other entries on
 how to do this exactly.
 
 The `out/organization_list.json` file is automatically generated. This file is 
-used by the `server_internet` server ONLY! You can specify the metadata URLs 
+used by the `secure_internet` servers ONLY! You can specify the metadata URLs 
 the SP is linked to in `_metadata_url_list` (as an array). A special case is 
 `_is_feide_sp` which is set to `true` for `guest.eduvpn.no` only. In this case
 the WAYF's HTML is scraped.
 
-SAML metadata files (and the Feide WAYF HTML) is cached in the `cache/` folder.
-You probably want to delete those regularly in order to sync up with any 
-added/removed IdPs in the metadata. 
+SAML metadata files (and the Feide WAYF HTML) are cached in the `cache/` 
+folder. You probably want to delete those regularly in order to sync up with 
+any added/removed IdPs in the metadata. 
 
 There is no signature verification of the SAML metadata as of this moment, this 
 is something that should probably be implemented at some point. This attack 
@@ -35,20 +35,22 @@ requires compromising the `_metadata_url_list` locations, typically hosted at
 an NREN. The risk is limited though as the metadata information is only used as 
 a "hint" for the SP, it can't be used to bypass anything.
 
+Commit your changes to the repository:
+
+    $ git commit -a -m 'add organization X'
+    $ git push
+
 # Discovery File Generation
+
+In order to generate the files for uploading to `disco.eduvpn.org`:
 
     $ ./generate.sh
 
-To sign:
+Sign them:
 
     $ ./sign.sh
 
-To commit:
-
-    $ git commit -a -m 'add organization X'
-    $ git push origin new-disco
-
-To upload:
+Upload them:
 
     $ ./upload.sh
 
@@ -64,11 +66,11 @@ And:
 
 # Public Keys
 
-The following public keys MUST be trusted by the eduVPN applications:
+The following Minisign public keys are trusted by the eduVPN applications:
 
 | Owner                | Public Key                                                 |
 | -------------------- | ---------------------------------------------------------- |
-| `fkooman@deic.dk`    | `RWRtBSX1alxyGX+Xn3LuZnWUT0w//B6EmTJvgaAxBMYzlQeI+jdrO6KF` |
+| `fkooman@tuxed.net`  | `RWRtBSX1alxyGX+Xn3LuZnWUT0w//B6EmTJvgaAxBMYzlQeI+jdrO6KF` |
 | `jornane@uninett.no` | `RWQ68Y5/b8DED0TJ41B1LE7yAvkmavZWjDwCBUuC+Z2pP9HaSawzpEDA` |
 | RoSp                 | `RWQKqtqvd0R7rUDp0rWzbtYPA3towPWcLDCl7eY9pBMMI/ohCmrS0WiM` |
 
@@ -104,7 +106,8 @@ Support for this will be part of the next release of
 
 With Feide we need to be even more clever as `AuthnRequest` "scoping" may not 
 be supported (unconfirmed as of 2020-05-26). There we may not have any other 
-choice than be clever `ReturnTo` (double) encoding.
+choice than be clever `ReturnTo` (double) encoding. This needs a detailed 
+proposal and testing.
 
 # Triggering SAML Login through URL
 
@@ -144,7 +147,7 @@ URL format: `/simplesaml/module.php/core/as_login.php?AuthId=<authentication sou
 
 URL format: `/php-saml-sp/login?ReturnTo=X&IdP=Y`
 
-# Web Server
+# Web Server Configuration
 
 The web server adds the `Cache-Control: no-cache` header to make sure that 
 HTTP clients will cache, but always verify that they have the latest version 
@@ -154,7 +157,7 @@ of the JSON and minisig files before using them:
         Header set Cache-Control "no-cache"
     </Directory>
     
-# Generate Minisign Key
+# Generate a Minisign Key
 
     $ minisign -G -p disco.pub -s disco.key
 

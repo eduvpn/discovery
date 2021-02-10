@@ -8,8 +8,8 @@ The JSON files are signed using
 
 To fetch the repository:
 
-    $ git clone git@git.sr.ht:~eduvpn/discovery
-    $ cd discovery
+    $ git clone git@git.sr.ht:~eduvpn/disco.eduvpn.org
+    $ cd disco.eduvpn.org
 
 Make sure you are on the latest commit in case someone else updated the 
 discovery files in the meantime, you don't want to overwrite those!

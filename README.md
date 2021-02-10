@@ -17,7 +17,10 @@ discovery files in the meantime, you don't want to overwrite those!
     $ git pull
 
 Modify `server_list.json` to add/remove servers. Look at the other entries on
-how to do this exactly.
+how to do this exactly. 
+
+**NOTE**: take the difference between `secure_internet` and `institute_access` 
+server type in consideration!
 
 The `out/organization_list.json` file is automatically generated. This file is 
 used by the `secure_internet` servers ONLY! You can specify the metadata URLs 

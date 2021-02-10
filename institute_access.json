@@ -472,6 +472,17 @@
             "logo": "https://static.eduvpn.nl/disco/img/utwente.png"
         },
         {
+            "base_uri": "https://eduvpn-01.worc.ac.uk/",
+            "display_name": {
+                "en": "University of Worcester"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/worc.png",
+            "support_contact": [
+                "tel:+441905857500",
+                "https://www2.worc.ac.uk/it/"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn.univ-reims.fr/",
             "display_name": "Universit\u00e9 de Reims Champagne-Ardenne",
             "logo": "https://static.eduvpn.nl/disco/img/urca.png",
@@ -535,6 +546,6 @@
             ]
         }
     ],
-    "seq": 195,
-    "signed_at": "2021-01-29 15:27:56"
+    "seq": 196,
+    "signed_at": "2021-02-10 13:15:31"
 }

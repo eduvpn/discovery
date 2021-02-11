@@ -260,6 +260,17 @@
         },
         {
             "server_type": "institute_access",
+            "base_url": "https://eduvpn-01.worc.ac.uk/",
+            "display_name": {
+                "en": "University of Worcester"
+            },
+            "support_contact": [
+                "tel:+441905857500",
+                "https://www2.worc.ac.uk/it/"
+            ]
+        },
+        {
+            "server_type": "institute_access",
             "base_url": "https://eduvpn.du.se/",
             "display_name": {
                 "en": "Dalarna University",

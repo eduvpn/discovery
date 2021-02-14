@@ -92,7 +92,9 @@ function fetchSamlMetadataIdpList(array $metadataUrlList)
         try {
             $metadataLocalFile = \dirname(__DIR__).'/cache/'.\urlencode($metadataUrl);
             if (!@\file_exists($metadataLocalFile)) {
-                if (false === $metadataContent = @\file_get_contents($metadataUrl)) {
+                $ch = \curl_init($metadataUrl);
+                \curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                if(false === $metadataContent = curl_exec($ch)) {
                     throw new RuntimeException(\sprintf('unable to fetch "%s"', $metadataUrl));
                 }
                 if (false === @\file_put_contents($metadataLocalFile, $metadataContent)) {

@@ -69,6 +69,14 @@
             "logo": "https://static.eduvpn.nl/disco/img/egi.png"
         },
         {
+            "base_uri": "https://eduvpn.enib.fr/",
+            "display_name": "ENIB",
+            "logo": "https://static.eduvpn.nl/disco/img/enib.png",
+            "support_contact": [
+                "mailto:cri@enib.fr"
+            ]
+        },
+        {
             "base_uri": "https://eduvpn.ensma.fr/",
             "display_name": "Ensma",
             "logo": "https://static.eduvpn.nl/disco/img/ensma.png",

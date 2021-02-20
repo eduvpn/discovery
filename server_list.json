@@ -313,6 +313,14 @@
         },
         {
             "server_type": "institute_access",
+            "base_url": "https://eduvpn.enib.fr/",
+            "display_name": "ENIB",
+            "support_contact": [
+                "mailto:cri@enib.fr"
+            ]
+        },
+        {
+            "server_type": "institute_access",
             "base_url": "https://eur.eduvpn.nl/",
             "display_name": "Erasmus University Rotterdam"
         },

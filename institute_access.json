@@ -11,6 +11,15 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.lism.catholic.edu.au/",
+            "display_name": "Catholic Schools Lismore Diocese",
+            "logo": "https://static.eduvpn.nl/disco/img/csld.png",
+            "support_contact": [
+                "https://helpdesk.lism.catholic.edu.au/",
+                "tel:+61266220422"
+            ]
+        },
+        {
             "base_uri": "https://sunset.nuonet.fr/",
             "display_name": "CNOUS",
             "logo": "https://static.eduvpn.nl/disco/img/crous.png",
@@ -554,6 +563,6 @@
             ]
         }
     ],
-    "seq": 197,
-    "signed_at": "2021-02-19 11:08:34"
+    "seq": 198,
+    "signed_at": "2021-03-02 15:29:43"
 }

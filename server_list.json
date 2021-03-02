@@ -777,6 +777,17 @@
                 "mailto:ict-servicedesk@zuyd.nl",
                 "tel:+31454006085"
             ]
+        },
+        {
+            "server_type": "institute_access",
+            "base_url": "https://eduvpn.lism.catholic.edu.au/",
+            "display_name": {
+                "en": "Catholic Schools Lismore Diocese"
+            },
+            "support_contact": [
+                "https://helpdesk.lism.catholic.edu.au/",
+                "tel:+61266220422"
+            ]
         }
     ]
 }

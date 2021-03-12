@@ -2,6 +2,17 @@
     "authorization_type": "local",
     "instances": [
         {
+            "base_uri": "https://eduvpn.ace.ac.ug/",
+            "display_name": {
+                "en": "African Center of Excellence in Bioinformatics - Uganda"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/ace.png",
+            "support_contact": [
+                "mailto:ace@idi.co.ug",
+                "https://ace.idi.co.ug/"
+            ]
+        },
+        {
             "base_uri": "https://avans.eduvpn.nl/",
             "display_name": "Avans Hogeschool",
             "logo": "https://static.eduvpn.nl/disco/img/avans.png",
@@ -563,6 +574,6 @@
             ]
         }
     ],
-    "seq": 198,
-    "signed_at": "2021-03-02 15:29:43"
+    "seq": 199,
+    "signed_at": "2021-03-12 12:15:17"
 }

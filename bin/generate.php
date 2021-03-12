@@ -11,16 +11,21 @@ $unixTime = time();
 
 $serverList = json_decode(file_get_contents('server_list.json'), true)['server_list'];
 
-\file_put_contents(
-    'out/organization_list.json',
-    \json_encode(
-        [
-            'v' => $unixTime,
-            'organization_list' => getOrganizationListFromServerList($serverList),
-        ],
-        JSON_UNESCAPED_SLASHES
-    )
-);
+try {
+    \file_put_contents(
+        'out/organization_list.json',
+        \json_encode(
+            [
+                'v' => $unixTime,
+                'organization_list' => getOrganizationListFromServerList($serverList),
+            ],
+            JSON_UNESCAPED_SLASHES
+        )
+    );
+} catch (RuntimeException $e) {
+    \error_log('ERROR: '.$e->getMessage());
+    exit(1);
+}
 
 // add timestamp to server_list file, remove the "private" entries and write 
 // to out/
@@ -89,33 +94,29 @@ function fetchSamlMetadataIdpList(array $metadataUrlList)
 {
     $idpList = [];
     foreach ($metadataUrlList as $metadataUrl) {
-        try {
-            $metadataLocalFile = \dirname(__DIR__).'/cache/'.\urlencode($metadataUrl);
-            if (!@\file_exists($metadataLocalFile)) {
-                $ch = \curl_init($metadataUrl);
-                \curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                if(false === $metadataContent = curl_exec($ch)) {
-                    throw new RuntimeException(\sprintf('unable to fetch "%s"', $metadataUrl));
-                }
-                if (false === @\file_put_contents($metadataLocalFile, $metadataContent)) {
-                    throw new RuntimeException(\sprintf('unable to write "%s"', $metadataLocalFile));
-                }
+        $metadataLocalFile = \dirname(__DIR__).'/cache/'.\urlencode($metadataUrl);
+        if (!@\file_exists($metadataLocalFile)) {
+            $ch = \curl_init($metadataUrl);
+            \curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            if(false === $metadataContent = curl_exec($ch)) {
+                throw new RuntimeException(\sprintf('unable to fetch "%s"', $metadataUrl));
             }
-            $md = new MetadataParserAll($metadataLocalFile);
-            $idpInfoList = $md->get();
-            foreach ($idpInfoList as $idpInfo) {
-                $entityId = $idpInfo->getEntityId();
-                $idpList[$entityId] = [
-                    'display_name' => $idpInfo->getDisplayName(),
-                ];
+            if (false === @\file_put_contents($metadataLocalFile, $metadataContent)) {
+                throw new RuntimeException(\sprintf('znable to write "%s"', $metadataLocalFile));
+            }
+        }
+        $md = new MetadataParserAll($metadataLocalFile);
+        $idpInfoList = $md->get();
+        foreach ($idpInfoList as $idpInfo) {
+            $entityId = $idpInfo->getEntityId();
+            $idpList[$entityId] = [
+                'display_name' => $idpInfo->getDisplayName(),
+            ];
 
-                $keywordList = $idpInfo->getKeywords();
-                if (0 !== \count($keywordList)) {
-                    $idpList[$entityId]['keyword_list'] = $idpInfo->getKeywords();
-                }
+            $keywordList = $idpInfo->getKeywords();
+            if (0 !== \count($keywordList)) {
+                $idpList[$entityId]['keyword_list'] = $idpInfo->getKeywords();
             }
-        } catch (RuntimeException $e) {
-            \error_log('ERROR: '.$e->getMessage());
         }
     }
 

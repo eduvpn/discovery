@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # verify JSON file
 if ! python -mjson.tool server_list.json > /dev/null;

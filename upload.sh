@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # CDN
 SERVER_LIST="tromso-cdn.eduroam.no ifi2-cdn.eduroam.no"

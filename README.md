@@ -38,16 +38,21 @@ requires compromising the `_metadata_url_list` locations, typically hosted at
 an NREN. The risk is limited though as the metadata information is only used as 
 a "hint" for the SP, it can't be used to bypass anything.
 
-Commit your changes to the repository:
-
-    $ git commit -a -m 'add organization X'
-    $ git push
-
 # Discovery File Generation
 
 In order to generate the files for uploading to `disco.eduvpn.org`:
 
     $ ./generate.sh
+
+**NOTE**: if there is ANY error, please fix that first! If for example a 
+metadata URL can't be loaded, the organizations extracted from that particular
+metadata will NOT be part of the `organization_list.json` and thus not appear 
+in the apps!
+
+**NOTE**: the `cache/` directory holds on to a list of metadata files that 
+were retrieved before. So it is a good idea to periodically (maybe on every 
+run of `./generate.sh`) delete the entries from the `cache/` directory to 
+retrieve the metadata again to incorporate changes from the metadata.
 
 Sign them:
 
@@ -56,6 +61,15 @@ Sign them:
 Upload them:
 
     $ ./upload.sh
+
+When the generation, signing and uploading were successful you can also commit
+the changes to git:
+
+Commit your changes to the repository, replace `vpn.example.org` with the 
+hostname of the VPN server you add:
+
+    $ git commit -a -m 'add server https://vpn.example.org'
+    $ git push
 
 The files are uploaded to:
 

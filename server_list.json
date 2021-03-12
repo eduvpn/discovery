@@ -445,6 +445,15 @@
         },
         {
             "server_type": "institute_access",
+            "base_url": "https://eduvpn.ace.ac.ug/",
+            "display_name": "African Center of Excellence in Bioinformatics - Uganda",
+            "support_contact": [
+                "mailto:ace@idi.co.ug",
+                "https://ace.idi.co.ug/"
+            ]
+        },
+        {
+            "server_type": "institute_access",
             "base_url": "https://eduvpn.ipb.pt/",
             "display_name": "Instituto Polit\u00e9cnico de Bragan\u00e7a",
             "support_contact": [

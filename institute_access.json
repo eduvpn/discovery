@@ -350,6 +350,18 @@
             ]
         },
         {
+            "base_uri": "https://eduvpn.sifulan.my/",
+            "display_name": {
+                "en": "SIFULAN Malaysian Access Federation"
+            },
+            "logo": "https://static.eduvpn.nl/disco/img/sifulan.png",
+            "support_contact": [
+                "mailto:support@sifulan.my",
+                "https://www.sifulan.my",
+                "tel:+60380814083"
+            ]
+        },
+        {
             "base_uri": "https://stc.eduvpn.nl/",
             "display_name": "STC Group",
             "logo": "https://static.eduvpn.nl/disco/img/stc-group.png"
@@ -574,6 +586,6 @@
             ]
         }
     ],
-    "seq": 199,
-    "signed_at": "2021-03-12 12:15:17"
+    "seq": 200,
+    "signed_at": "2021-03-15 08:37:59"
 }
